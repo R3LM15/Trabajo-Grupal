@@ -1,6 +1,7 @@
-## **Clase01 -- 30 de abril**
+### **Clase01 -- 30 de abril**
 
 **Comando Powershell**
+
 /ri/  Remove-Item -Path holamundo.java   ==remover archivos==   
 /ni/  New-Item holamundo.java            ==crear archivos== |  New-Item Clases -type directory  
 /mi/  Move-Item holamundo.java -destination "Carpeta"         
@@ -9,6 +10,7 @@
 /ls/  ls                                 ==Ver Directorio==
 
 **comando de Vscode**
+
 Windows: shift + Ctrl + P           ==llamar directorio o programas==
 Windows: shift + Alt + arriba/abajo ==copiar lineas==
 Windows: Alt + --> / Alt <--        ==Mover linear/ moverse entre el inicio y final de lineas==
@@ -20,7 +22,7 @@ Windows: Ctrl + T                   ==Buscar programas en el repositorio==
 Windows: Ctrl + Ñ                   ==Ocultar o aparecer shell==
 Windows: Ctrl + L                   ==Limpiar Terminal==
 
-## **Clase02 -- 01 de Mayo**
+### **Clase02 -- 01 de Mayo**
 
 *Nota:* Alfinal de cada bimbestre se debe entregar un pdf con los apuntes hechos en markdown
 
@@ -37,7 +39,8 @@ git push (Enviar documento a la nube)
 Extenciones markdown  .md 
 
 - *Encabezados*
-![](Encabezado.png){width=width height=height}
+
+![](Encabezado.png)
 
 - *Mostrar Codigo*
  " ```java  "
@@ -54,7 +57,7 @@ public class HolaMundo {
 
 - *Poner imagen*
 
-![](ej.png){width=width height=height}
+![](ej.png)
 
 
 - Después escribimos, dentro de los corchetes, el texto alternativo. Este es opcional y solo entra en acción cuando no se puede cargar la imagen correctamente.

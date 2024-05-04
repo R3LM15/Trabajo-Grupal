@@ -1,5 +1,14 @@
 ## Primera Semana
 ### **-Resumen-**
+
+### *Participantes*
+
+Mateo Molina
+
+
+
+
+
 *Programas necesarios para el Semestre* 
 - Java + Extensiones
 - git hut/git bush 
