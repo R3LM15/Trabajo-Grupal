@@ -4,17 +4,25 @@
 ### *Participantes*
 
 Mateo Molina
-
+Francisco Morales
 
 
 
 
 *Programas necesarios para el Semestre* 
 - Java + Extensiones
-- git hut/git bush 
+- git hub/git bash 
 - Markdown + Extensiones
 - Draw.io + Extensiones
 - SQlite ! + Extensiones
+
+
+*Personalización del entorno*
+- Terminal de Git Bash "oh my posh"
+- Tema y Iconos de Vscode "Extensiones"
+- Conexión con cuenta de github
+- Creación del directorio Principal "Workspace"
+- Instalación de extensiones requeridas
 
 
 ### **Comando Básicos Powershell**
@@ -45,7 +53,16 @@ Windows: Tab                        ==Doble Espaciado entre lineas==
 git init 
 git status
 git add . ==gregar cambios nuevos==
-git commint - m "mensaje" ==mensaje de guardado==
+git commit -m "mensaje" ==mensaje de guardado==
 git push ==para empujar el documento a la nube==
-git pull
-    
+git pull ==traer los archivos de la nube al repositorio local==
+git config user.name
+git config --global user.name
+git branch -m main ==renombrar rama==
+git branch ==visualizar ramas==
+git switch "---" ==Cambiar de ramas==
+git help
+git push -force ==forzar la subida de un archivo==
+git reset --hard ==descartar cambios desde un commit==
+git revert
+git merge ==combinar ramas==
