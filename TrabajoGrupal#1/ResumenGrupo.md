@@ -80,8 +80,8 @@ ls
 ```Windows: Ctrl + T```
 **==Ocultar o aparecer shell==** 
 ```Windows: Ctrl + Ñ```
-**Windows: Ctrl + L** 
-```==Limpiar Terminal==```
+**==Limpiar Terminal==** 
+```Windows: Ctrl + L```
 **==Eliminar líneas==** 
 ```Windows: Ctrl + x```
 **==Cambio de Pestañas==** 
