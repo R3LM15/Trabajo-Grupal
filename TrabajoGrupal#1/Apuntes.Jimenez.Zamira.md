@@ -1,5 +1,5 @@
 # ***Clase numero 1: Introduccion*** #
-En la primera clase de la semana comenzando visualizando el silabo de la materia, el cual se encuentra en el siguiente enlace: [Silabo 2024- Programacion II](https://aulasvirtuales.epn.edu.ec/mod/resource/view.php?id=8454247)
+En la primera clase se visualizo el silabo de la materia, el cual se encuentra explicdo l pnderacion de notas y los temas que se veran a lo largo del semestre para su mejor visualizacion lo encontramos en el siguiente enlace: [Silabo 2024- Programacion II](https://aulasvirtuales.epn.edu.ec/mod/resource/view.php?id=8454247)
 ### Comandos Linux
 * **pwd:** Sirve para observar el directorio en el que estamos.
 * **touch:** Sirve para crear un archivo vacio.
@@ -17,13 +17,13 @@ En la primera clase de la semana comenzando visualizando el silabo de la materia
 * **Mostrar todos los simbolos:** CTRL+T
 * **Sugerencias de activacion o de parametros:** CTRL*ESPACIO  ***o***  CTRL+MAYUS+ESPACIO
 ## ***Clase numero 2: Primer Taller*** ##
-En este taller trabajamos con unos grupos formados previamente la clase anterior con los siguientes materiales:
+En este taller trabajamos en grupo y se organizo para traer los materiales mencionados a continuacion:
 * ***Fideos***
 * ***Malvaviscos***
 * ***Cinta Masquin***
 * ***Cinta metrica*** 
 ___
-En resumen el objetivo era construir una torre utilizando la menor cantidad de material posibles y con la mayor altura posible.
+El objetivo era construir una torre utilizando la menor cantidad de material posibles y con la mayor altura posible. Viendo asi nuestra destreza del trabjo en equipo y la ayuda de un lider para realizar la actividad
 ![Imagen](img1.jpeg)
 ## ***Clase numero 3: GIT*** ## 
 ### Markdown ###
