@@ -7,6 +7,7 @@
 - Mateo Molina
 - Francisco Morales
 - Daniel Menendez
+- Marco Marcillo
 
 <br>
 
@@ -92,6 +93,45 @@ ls
 
 <br>
 
+---
+# ***CONCEPTOS BASICOS MARKDOWN*** #
+## USOS Y VISUALIZACIONES ##
+ ### *1. Texto basicos* ###
+![EPN](image.png)
+---
+>[!NOTE]
+>
+>Este es un cuadro de texto, podemos añadir notas.
+>Utilizando ">" al inicio de una linea"
+---
+>Ejemplo= *pwd:* sirve para visualizar el directorio en el que estamos. 
+---
+### *2. Bloques de codigos* ###
+Utilizamos  **```**  al incio y al final del codigo.
+#### *Bloque de codigo JAVA* ####
+``` java
+public class HolaMundo {
+    public static void main(String[] args) {
+    System.out.println("Hola mundo");}
+}
+```
+---
+#### *Bloque de codigo C* ####
+```c
+int main{
+printf hola mundo
+return 0
+}
+```
+---
+### *4. Adjuntar enlaces* ### 
+Usando **[] ()** unidos, ingresamos un nombre de referencia y su direccion URL respectivamente.
+  * [Google](http://google.com)
+---
+### *5. Tablas* ###
+| x | f(x) |
+   |---|---|
+   | Hola | mundo |
 #### **Comandos de linux y git** 
 ```
 git init 
