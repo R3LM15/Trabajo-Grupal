@@ -8,6 +8,7 @@
 - Francisco Morales
 - Daniel Menendez
 - Marco Marcillo
+- Zamira Jimenez
 
 <br>
 
