@@ -1,4 +1,4 @@
-public class DoWhileNombreYApellidoJM {
+public class DoWhileInicialNombreYApellidoJM {
     public void DoWhileJM() {
 
         String asterisco = "***";

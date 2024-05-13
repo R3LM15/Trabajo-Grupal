@@ -1,24 +1,24 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        ForApellidoM fm;
-        ForNombreJ fj;
-        ForNombreYApeliidoJM fjm;
-        WhileNombreJ wj;
-        WhileApellidoM wm;
-        WhileNombreYAplellidoJM wjm;
-        DoWhileNombreJ dwj;
-        DoWhileApellidoM dwm;
-        DoWhileNombreYApellidoJM dwjm;
+        ForInicialApellidoM fm;
+        ForInicialNombreJ fj;
+        ForInicialNombreYApeliidoJM fjm;
+        WhileInicialNombreJ wj;
+        WhileInicialApellidoM wm;
+        WhileInicialNombreYAplellidoJM wjm;
+        DoWhileInicialNombreJ dwj;
+        DoWhileInicialApellidoM dwm;
+        DoWhileInicialNombreYApellidoJM dwjm;
 
-        fjm =new ForNombreYApeliidoJM();
-        fm = new ForApellidoM();
-        fj = new ForNombreJ();
-        wj = new WhileNombreJ();
-        wm = new WhileApellidoM();
-        wjm = new WhileNombreYAplellidoJM();
-        dwj = new DoWhileNombreJ();
-        dwm = new DoWhileApellidoM();
-        dwjm = new DoWhileNombreYApellidoJM();
+        fjm =new ForInicialNombreYApeliidoJM();
+        fm = new ForInicialApellidoM();
+        fj = new ForInicialNombreJ();
+        wj = new WhileInicialNombreJ();
+        wm = new WhileInicialApellidoM();
+        wjm = new WhileInicialNombreYAplellidoJM();
+        dwj = new DoWhileInicialNombreJ();
+        dwm = new DoWhileInicialApellidoM();
+        dwjm = new DoWhileInicialNombreYApellidoJM();
 
         fj.forJ();
         fm.forM();

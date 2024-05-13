@@ -1,61 +1,59 @@
-public class DoWhileApellidoM {
-    public void dowhileM() {
+public class WhileInicialApellidoM {
+    public void whileM() {
         String asterisco = "***";
         String ast = "**";
 
         System.out.println("");
         System.out.println("");
-        System.out.println("DO WHILE M");
+        System.out.println("WHILE M");
         System.out.println("");
 
-        int i = 1;
+       
         int j = 1;
         int jj = 1;
         int jd = 1;
         int jz = 1;
+        int jhz = 1;
 
-        do {
+        while (jhz <= 1) {
             int k = 1;
-            do {
+            while (k <= 1) {
                 System.out.print(asterisco);
 
                 k++;
+            }
 
-            } while (k <= 1);
             System.out.print("       ");
-            i++;
-
-        } while (i <= 1);
+            jhz++;
+        }
         System.out.print(asterisco);
         System.out.println("");
 
-        do {
+        while (j <= 1) {
             int k = 1;
-            do {
+            while (k <= 1) {
                 System.out.print(asterisco);
                 System.out.print(ast);
 
                 k++;
-
-            } while (k <= 1);
+            }
 
             System.out.print("   ");
             j++;
-
-        } while (j <= 1);
+        }
         System.out.print(asterisco);
         System.out.print(ast);
         System.out.println("");
 
-        do {
+
+        while (jj <= 13) {
             System.out.print("*");
 
             jj++;
-
-        } while (jj <= 13);
+        }
         System.out.println("");
 
-        do {
+        while (jd <= 5) {
             if (jd == 1 || jd == 3 || jd == 5) {
                 System.out.print(asterisco);
 
@@ -64,13 +62,12 @@ public class DoWhileApellidoM {
             }
 
             jd++;
-
-        } while (jd <= 5);
+        }
         System.out.println("");
 
-        do {
+        while (jz <= 4) {
             int ja = 1;
-            do {
+            while (ja <= 13) {
                 if (ja == 1 || ja == 9) {
                     System.out.print(asterisco);
                 } else {
@@ -78,13 +75,11 @@ public class DoWhileApellidoM {
                 }
 
                 ja++;
-
-            } while (ja <= 13);
-
+            }
             System.out.println("");
-            jz++;
 
-        } while (jz <= 4);
+            jz++;
+        }
 
     }
 

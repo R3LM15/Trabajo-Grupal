@@ -1,4 +1,4 @@
-public class ForApellidoM {
+public class ForInicialApellidoM {
 
     public void forM() {
         String asterisco = "***";

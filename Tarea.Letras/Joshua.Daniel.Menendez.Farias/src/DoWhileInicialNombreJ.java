@@ -1,10 +1,11 @@
-public class WhileNombreJ {
-    public void whilej() {
+public class DoWhileInicialNombreJ {
+
+    public void dowhileJ() {
         String asterisco = "***";
 
         System.out.println("");
         System.out.println("");
-        System.out.println("WHILE J");
+        System.out.println(" DO WHILE J");
         System.out.println("");
 
         int i = 1;
@@ -12,31 +13,25 @@ public class WhileNombreJ {
         int je = 1;
         int jz = 1;
 
-        while (i <= 1) {
-            System.out.print("   ");
+        System.out.print("   ");
+        do {
+            System.out.print(asterisco);
 
-            while (j <= 3) {
-                System.out.print(asterisco);
-                j++;
+            j++;
+        } while (j <= 3);
+        System.out.println("");
 
-            }
-
-            System.out.println("");
-            i++;
-
-        }
-
-        while (i <= 5) {
+        do {
             System.out.print("      ");
             System.out.print(asterisco);
             System.out.println("");
             i++;
-        }
 
-        while (je <= 2) {
+        } while (i <= 4);
 
+        do {
             int jd = 1;
-            while (jd <= 13) {
+            do {
                 if (jd == 1 || jd == 5) {
                     System.out.print(asterisco);
                 } else {
@@ -44,19 +39,21 @@ public class WhileNombreJ {
                 }
 
                 jd++;
-            }
+
+            } while (jd <= 13);
+
             je++;
             System.out.println();
 
-        }
-
+        } while (je <= 2);
 
         System.out.print(" ");
-        while (jz <= 7) {
+        do {
             System.out.print("*");
             jz++;
-        }
 
+        } while (jz <= 7);
 
     }
+
 }

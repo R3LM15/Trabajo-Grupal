@@ -1,4 +1,4 @@
-public class WhileNombreYAplellidoJM {
+public class WhileInicialNombreYAplellidoJM {
     public void WhileJM() {
 
         String asterisco = "***";
