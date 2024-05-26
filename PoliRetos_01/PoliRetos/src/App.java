@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        int mmTamano= 10;
+        int mmTamano= 3;
 
         
 
@@ -20,39 +20,31 @@ public class App {
         System.out.println(">> Series numéricas");
                         System.out.println(" ");
 
-            MolinaMateo SN1;
-                SN1= new MolinaMateo();
-                SN1.mmSN1(mmTamano);
+            MolinaMateo MMSeries;
+             MMSeries= new MolinaMateo();
+
+                MMSeries.mmSN1(mmTamano);
                         System.out.println(" ");
 
-            MolinaMateo SN2;
-                SN2= new MolinaMateo();
-                SN2.mmSN2(mmTamano);
+                MMSeries.mmSN2(mmTamano);
                         System.out.println(" ");
 
-            MolinaMateo SN6;
-                SN6= new MolinaMateo();
-                SN6.mmSN6(mmTamano);
+                MMSeries.mmSN3(mmTamano);
+                        System.out.println(" ");
+
+                MMSeries.mmSN6(mmTamano);
                         System.out.println(" ");
                         
-            MolinaMateo SN7;
-                SN7= new MolinaMateo();
-                SN7.mmSN7(mmTamano);
+                MMSeries.mmSN7(mmTamano);
                         System.out.println(" ");
 
-            MolinaMateo SN8;
-                SN8= new MolinaMateo();
-                SN8.mmSN8(mmTamano);
+                MMSeries.mmSN8(mmTamano);
                         System.out.println(" ");
 
-            MolinaMateo SN9;
-                SN9= new MolinaMateo();
-                SN9.mmSN9(mmTamano);
+                MMSeries.mmSN9(mmTamano);
                         System.out.println(" ");
 
-            MolinaMateo SN10;
-                SN10= new MolinaMateo();
-                SN10.mmSN10(mmTamano);
+                MMSeries.mmSN10(mmTamano);
                         System.out.println(" ");
 
         System.out.println(">> Figuras");

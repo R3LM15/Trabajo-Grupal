@@ -3,9 +3,15 @@ public class MolinaMateo {
     public void mmSN1(int mmTamano){
         System.out.print("SN1:  ");
 
-        for(int i=0; i<mmTamano; i++){
-            System.out.print(i);
-            System.out.print(" ");
+        int a=0;
+        int b=1;
+
+        if (mmTamano != 0) System.out.print(a + " " + b +" ");
+        for(int i=0; i<mmTamano - 2; i++){
+            int c = a+b;
+            System.out.print(c + " ");
+            a=b;
+            b=c;
       }
     System.out.println(" ");
     }
@@ -19,6 +25,25 @@ public class MolinaMateo {
                 System.out.print("0 ");
             }
       }
+    System.out.println(" ");
+    }
+    public void mmSN3(int mmTamano){
+        System.out.print("SN3:  ");
+
+        int mminicio = 5;
+        int a=0;
+        int b=1;
+
+        if (mmTamano != 0) System.out.print(a + "/"+ 1 + " " + b +"/"+ 3 + " ");
+        for(int i=0; i<mmTamano - 2; i++){
+            int c = a+b;
+            System.out.print(c + "/"+ mminicio + " ");
+            a=b;
+            b=c;
+            mminicio = mminicio + 2; 
+        
+        }
+        
     System.out.println(" ");
     }
     public void mmSN5(int mmTamano){
