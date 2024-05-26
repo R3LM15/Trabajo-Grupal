@@ -16,7 +16,7 @@ public class App {
                     
         System.out.println(">> Series numéricas");
                         System.out.println(" ");
-                        
+
             MolinaMateo SN1;
                 SN1= new MolinaMateo();
                 SN1.mmSN1(mmTamano);
