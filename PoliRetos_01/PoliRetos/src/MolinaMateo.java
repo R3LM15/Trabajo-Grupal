@@ -1,5 +1,19 @@
 public class MolinaMateo {
     
+    private int mmTamano;
+
+
+    public int getmmTamano() {
+        return mmTamano;
+    }
+
+    public void setmmTamano(int mmTamano) {
+        this.mmTamano = mmTamano;
+    }
+
+
+
+
     public void mmSN1(int mmTamano){
         System.out.print("SN1:  ");
 
@@ -155,5 +169,8 @@ public class MolinaMateo {
       }
     System.out.println(" ");
     }
+
+    
+    
 
 }

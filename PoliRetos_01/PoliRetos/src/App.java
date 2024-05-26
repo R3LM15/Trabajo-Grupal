@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class App {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        int mmTamano= 10;
-
         
+        
+        
+      
 
         System.out.println("      GRUPO #03      ");
         System.out.println("---- INTEGRANTES ----");
@@ -23,34 +24,34 @@ public class App {
             MolinaMateo MMSeries;
              MMSeries= new MolinaMateo();
 
-                MMSeries.mmSN1(mmTamano);
+                MMSeries.mmSN1(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN2(mmTamano);
+                MMSeries.mmSN2(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN3(mmTamano);
+                MMSeries.mmSN3(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN4(mmTamano);
+                MMSeries.mmSN4(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN5(mmTamano);
+                MMSeries.mmSN5(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN6(mmTamano);
+                MMSeries.mmSN6(mmLecturaTamano());
                         System.out.println(" ");
                         
-                MMSeries.mmSN7(mmTamano);
+                MMSeries.mmSN7(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN8(mmTamano);
+                MMSeries.mmSN8(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN9(mmTamano);
+                MMSeries.mmSN9(mmLecturaTamano());
                         System.out.println(" ");
 
-                MMSeries.mmSN10(mmTamano);
+                MMSeries.mmSN10(mmLecturaTamano());
                         System.out.println(" ");
 
         System.out.println(">> Figuras");
@@ -98,5 +99,25 @@ public class App {
         } while (mfControl || mfNivel < 0);
         sc.next();
         return mfNivel;
+    }
+
+    private static int mmLecturaTamano() {
+    Scanner scanner = new Scanner(System.in);
+
+        int mmTamano = 0;
+      
+        
+        System.out.print("> Ingresa el tamaño que tendra la serie:  ");
+            try{
+                 mmTamano     = sc.nextInt();
+            }catch(Exception e){
+                 System.out.println(" EL NÚMERO INTRODUCIDO NO ES UN NUMERO, VUELVA A INTENTARLO.");
+                 sc.next();
+                  }  
+        
+        return mmTamano;
+                //  
+
+
     }
 }
