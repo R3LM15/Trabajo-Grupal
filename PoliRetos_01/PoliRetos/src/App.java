@@ -12,7 +12,7 @@ public class App {
         System.out.println("---- INTEGRANTES ----");
         System.out.println("->  Molina.Mateo");
         System.out.println("->  Morales.Francisco");
-        System.out.println("->  ");
+        System.out.println("->  Zamira.Jimenez");
         System.out.println("->  ");
         System.out.println("---- ----------- ----");
                     System.out.println(" ");
