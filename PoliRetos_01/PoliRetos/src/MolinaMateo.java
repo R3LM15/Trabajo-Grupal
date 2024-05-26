@@ -43,26 +43,70 @@ public class MolinaMateo {
             mminicio = mminicio + 2; 
         
         }
-        
     System.out.println(" ");
     }
+
+    public void mmSN4(int mmTamano){
+        System.out.print("SN4:  ");
+
+        int mminicio = 2;
+        int a=0;
+        int b=1;
+
+        if (mmTamano != 0) System.out.print(a + "/"+ mminicio + " " + b +"/"+ (mminicio+2) + " ");
+        mminicio = mminicio + 4; 
+        for(int i=0; i<mmTamano - 2; i++){
+            int c = a+b;
+            System.out.print(c + "/"+ mminicio + " ");
+            a=b;
+            b=c;
+            mminicio = mminicio + 2; 
+        
+        }
+    System.out.println(" ");
+    }
+    
+
     public void mmSN5(int mmTamano){
         System.out.print("SN5:  ");
-        int mminicio = 1;
-        
-        for (int i = 0; i < mmTamano; i++) {
-            System.out.print(mminicio + " ");
-            mminicio = mminicio + 3 + i*2;         
-      }
-    System.out.println(" ");
-    }  
+        int mminicio = 2;
+        int i = 0;
+
+        while (i < mmTamano) {
+            boolean esPrimo = true;
+
+            for (int y = 2; y <= Math.sqrt(mminicio); y++) {
+                if (mminicio % y == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
+
+            if (esPrimo) {
+                System.out.print(mminicio + " ");
+                i++;
+            }
+
+            mminicio++;
+        }
+        System.out.println(" ");
+    }
+      
+      
+    
+    
+
     public void mmSN6(int mmTamano){
         System.out.print("SN6:  ");
-        int mminicio = 1;
+        int mminicio = 2;
         
         for (int i = 0; i < mmTamano; i++) {
-            System.out.print(mminicio + " ");
-            mminicio = mminicio + 3 + i*2;
+
+            if (mminicio % mminicio == 0 ) {
+                System.out.print(mminicio + " ");
+            }
+
+            mminicio = mminicio + 1 ;
                  
       }
     System.out.println(" ");

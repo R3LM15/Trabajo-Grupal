@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        int mmTamano= 3;
+        int mmTamano= 10;
 
         
 
@@ -30,6 +30,12 @@ public class App {
                         System.out.println(" ");
 
                 MMSeries.mmSN3(mmTamano);
+                        System.out.println(" ");
+
+                MMSeries.mmSN4(mmTamano);
+                        System.out.println(" ");
+
+                MMSeries.mmSN5(mmTamano);
                         System.out.println(" ");
 
                 MMSeries.mmSN6(mmTamano);
