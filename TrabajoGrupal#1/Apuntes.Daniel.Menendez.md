@@ -1,15 +1,15 @@
 # CLASE 01
 
-*30-04-2024*
+_30-04-2024_
 
 ## **Comandos básicos en Visual Estudio Code**
 
 Todos los comandos a continuacion son ejecutables en windows:
 
 - **CTRL + SHIFT + P**: Abre la paleta de comandos.
-- **CTRL +  P**: Abre el buscador de archivos.
-- **CTRL +  B**: Abre y cierra la barra lateral.
-- **CTRL +  D**: Activa el multi-cursor.
+- **CTRL + P**: Abre el buscador de archivos.
+- **CTRL + B**: Abre y cierra la barra lateral.
+- **CTRL + D**: Activa el multi-cursor.
 - **SHIFT + ALT + UP / SHIFT + ALT + DOWN**: Seleccionar toda la linea de codigo.
 - **SHIFT + ALT + A**: Comentar varias lineas de codigo.
 - **CTRL + K + C**: Comentar una linea de codigo.
@@ -18,11 +18,12 @@ Todos los comandos a continuacion son ejecutables en windows:
 - **CTRL + ESPACIO**: Sugerencias de activacion.
 
 ---
+
 <br>
 
 # CLASE 02
 
-*01-05-2024*
+_01-05-2024_
 
 ## **Markdown**
 
@@ -36,7 +37,7 @@ Tiene varias funcionalidades para resaltar de diversas formas las partes del tex
 
 ### **Colocar lineas de codigo**
 
-``` c++
+```c++
 int main (){
     cout << "Esto es un ejemplo"<<endl;
 }
@@ -119,7 +120,7 @@ cat .gitignore
 ### **Ver archivos ignorados**
 
 ```
-git add -f NombreArchivo.log 
+git add -f NombreArchivo.log
 ```
 
 ### **Crear y clonar**
@@ -136,7 +137,7 @@ git clone /ruta del repositorio
 
 # CLASE 03
 
-*06/05/2024*
+_06/05/2024_
 
 ## JAVA
 
@@ -184,3 +185,87 @@ git clone /ruta del repositorio
 - La programacion orientada a objetos tiene **propiedades**.
 - Las variables si existen, solo **dentro de los metodos**.
 
+<br>
+
+# CLASE 07
+
+_13-05-2024_
+
+## P.O.O
+
+### 1. Conceptualizacion
+
+Se refiere a la idea que se quiere realizar, se puede dibujar, prototipar, etc.
+
+- Se necesita ponerle un nombre y concretar un significado.
+- A los objetos se les puede atribuir dos cosas: caracteristicas o acciones:
+
+**_Caracteristicas:_** propiedades, se debe poder almacenar, y debe almacenar informacion (descripcion precisa del objeto).
+
+**_Acciones:_** metodos, son acciones, verbo, las acciones deben estar ligadas a las propiedades. Tienen parametros (Informacion necesaria para que se cumpla la accion de manera exitosal).
+
+**Ambitos:**
+
+- Public (+)
+- Protect (-)
+- Friendly (~)
+- Protect
+
+### 2. UML
+
+(Lenguaje de modelado unificado) se usan las clases, todo lo conceptualizado se ubica dentro de una clase
+
+## | Clase |
+
+| - edad: float |
++Tipocabello: string
+| ~ bailar (cancion:string, tiempomin:int, ritmo:string) : string |
+~ tocar (Objeto:string, tiempoMin:int): boolean
++Saltar (AlturaMts: int, cantidad:int):void
+
+Se puede pedir que las acciones devuelvan un valor, que puede ser:
+
+- void: No regresa nada
+- String: que regrese una palabra o dato
+- Boolean: regrese un valor verdadero o falso.
+
+**_Eventos_**: Situaciones en la que interactua el objeto con otros objetos.
+
+### 3. Codigo
+
+```Java
+public class mujer {
+    private float edad;
+    public boolean tieneojos;
+
+    protected bailar (String cancion, TiempoMin int, String ritmo)
+        return "sddsdsds";
+
+
+}
+```
+
+# CLASE 08
+
+_20-05-2024_
+
+## Herencias
+
+1. Diagrama de clase de uso
+2. coonvertir en UML
+
+# CLASE 00
+
+_20-05-2024_
+
+## Constructor
+
+- Es un metodo
+- Tiene el nombre de la clase
+- Siempre es publico
+- Esta por defecto, hasta que se lo define.
+- Se llaman una sola vez de forma automatica o cuando se instancie.
+
+### Sobrecarga
+
+Particularidad de poder pasar varios parametros
