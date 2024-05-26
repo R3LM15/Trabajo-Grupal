@@ -106,7 +106,6 @@ public class App {
 
         int mmTamano = 0;
       
-        
         System.out.print("> Ingresa el tamaño que tendra la serie:  ");
             try{
                  mmTamano     = sc.nextInt();
