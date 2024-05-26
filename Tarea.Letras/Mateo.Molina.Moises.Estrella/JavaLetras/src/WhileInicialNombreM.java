@@ -1,10 +1,9 @@
 public class WhileInicialNombreM {
 
-    int   n =5;
     String letra = "x";
     String vacio = " ";
 
-public void wm(){
+public void wm(int n){
 int i=1;
 while (i<=n){
     System.out.print(letra);

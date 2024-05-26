@@ -1,10 +1,10 @@
 public class DoWhileInicialApellidoM {
 
-    int   n =5;
+    
     String letra = "x";
     String vacio = " ";
 
-    public void Dwmo(){
+    public void Dwmo(int n){
 
 
         int i = 1;

@@ -1,10 +1,9 @@
 public class DoWhileInicialNombreApellidoMM {
 
-    int   n = 5;
     String letra = "x";
     String vacio = " ";
 
-    public void Dwmm(){
+    public void Dwmm(int n){
 
 
     int i = 1;

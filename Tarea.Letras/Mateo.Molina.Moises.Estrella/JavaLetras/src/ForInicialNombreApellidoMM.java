@@ -1,10 +1,9 @@
 public class ForInicialNombreApellidoMM {
 
-    int   n = 5;
     String letra = "x";
     String vacio = " ";
 
-public void lmamo(){
+public void lmamo(int n){
 
     for(int i=1; i<=n; i++){
         System.out.print(letra);
