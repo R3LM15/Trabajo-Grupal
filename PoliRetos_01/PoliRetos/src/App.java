@@ -16,11 +16,22 @@ public class App {
                     
         System.out.println(">> Series numéricas");
                         System.out.println(" ");
+                        
             MolinaMateo SN1;
                 SN1= new MolinaMateo();
                 SN1.mmSN1(mmTamano);
                         System.out.println(" ");
 
+            MolinaMateo SN2;
+                SN2= new MolinaMateo();
+                SN2.mmSN2(mmTamano);
+                        System.out.println(" ");
+
+            MolinaMateo SN6;
+                SN6= new MolinaMateo();
+                SN6.mmSN6(mmTamano);
+                        System.out.println(" ");
+                        
             MolinaMateo SN7;
                 SN7= new MolinaMateo();
                 SN7.mmSN7(mmTamano);
