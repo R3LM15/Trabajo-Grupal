@@ -3,7 +3,23 @@ import java.util.Scanner;
 public class App {
         public static Scanner sc = new Scanner(System.in);
 
+<<<<<<< HEAD
         public static void main(String[] args) throws Exception {
+=======
+        System.out.println("      GRUPO #03      ");
+        System.out.println("---- INTEGRANTES ----");
+        System.out.println("->  Molina.Mateo");
+        System.out.println("->  Morales.Francisco");
+        System.out.println("->  Zamira.Jimenez");
+        System.out.println("->  Marcillo.Marco");
+        System.out.println("->  ");
+        System.out.println("---- ----------- ----");
+                    System.out.println(" ");
+                    
+                    
+        System.out.println(">> Series numéricas");
+                        System.out.println(" ");
+>>>>>>> 92dd7fe8564c3426bb04dde52c9acc196f57f4fd
 
                 System.out.println("      GRUPO #03      ");
                 System.out.println("---- INTEGRANTES ----");
@@ -50,8 +66,39 @@ public class App {
                 MMSeries.mmSN10(mmLecturaTamano());
                 System.out.println(" ");
 
+<<<<<<< HEAD
                 System.out.println(">> Figuras");
                 System.out.println(" ");
+=======
+        System.out.println(">> Series de caracteres");
+        System.out.println(" ");
+        int nTermino=10;
+        String caracter1="+" ,caracter2="-",caracter3="*",caracter4="/";
+        char limiteLetra='h';
+
+        MarcoMarcillo MMserie=new MarcoMarcillo();
+        MMserie.mmSC1(nTermino,caracter1,caracter2);
+        System.out.println("");
+        MMserie.mmSC2(nTermino,caracter1);
+        System.out.println("");  
+        MMserie.mmSC3(nTermino,caracter1);
+        System.out.println("");  
+        MMserie.mmSC4(nTermino,caracter1,caracter2,caracter3,caracter4);
+        System.out.println("");  
+        MMserie.mmSC5(nTermino,caracter1,caracter2,caracter3,caracter4);
+        System.out.println(""); 
+        MMserie.mmSC7(limiteLetra);
+        System.out.println(""); 
+        MMserie.mmSC8(limiteLetra);
+        System.out.println(""); 
+        MMserie.mmSC9(limiteLetra);
+        System.out.println("");                  
+
+        System.out.println(">> Figuras");
+            System.out.println(" ");
+            
+            MoralesFrancisco oMfFiguras = new MoralesFrancisco();
+>>>>>>> 92dd7fe8564c3426bb04dde52c9acc196f57f4fd
 
                 MenendezJoshua mfFiguras = new MenendezJoshua();
 
