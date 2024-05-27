@@ -1,122 +1,153 @@
 import java.util.Scanner;
 
 public class App {
-    public static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) throws Exception {
-        
-        
-        
-      
+        public static Scanner sc = new Scanner(System.in);
 
-        System.out.println("      GRUPO #03      ");
-        System.out.println("---- INTEGRANTES ----");
-        System.out.println("->  Molina.Mateo");
-        System.out.println("->  Morales.Francisco");
-        System.out.println("->  Zamira.Jimenez");
-        System.out.println("->  ");
-        System.out.println("---- ----------- ----");
-                    System.out.println(" ");
-                    
-                    
-        System.out.println(">> Series numéricas");
-                        System.out.println(" ");
+        public static void main(String[] args) throws Exception {
 
-            MolinaMateo MMSeries;
-             MMSeries= new MolinaMateo();
+                System.out.println("      GRUPO #03      ");
+                System.out.println("---- INTEGRANTES ----");
+                System.out.println("->  Molina.Mateo");
+                System.out.println("->  Morales.Francisco");
+                System.out.println("->  Zamira.Jimenez");
+                System.out.println("->  Menendez.Joshua  ");
+                System.out.println("---- ----------- ----");
+                System.out.println(" ");
+
+                System.out.println(">> Series numéricas");
+                System.out.println(" ");
+
+                MolinaMateo MMSeries;
+                MMSeries = new MolinaMateo();
 
                 MMSeries.mmSN1(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN2(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN3(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN4(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN5(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN6(mmLecturaTamano());
-                        System.out.println(" ");
-                        
+                System.out.println(" ");
+
                 MMSeries.mmSN7(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN8(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN9(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
                 MMSeries.mmSN10(mmLecturaTamano());
-                        System.out.println(" ");
+                System.out.println(" ");
 
-        System.out.println(">> Figuras");
-            System.out.println(" ");
-            
-            MoralesFrancisco oMfFiguras = new MoralesFrancisco();
+                System.out.println(">> Figuras");
+                System.out.println(" ");
 
-            oMfFiguras.setSimboloLinea("_");
-            oMfFiguras.setmfSimboloMas("+");
-            oMfFiguras.setmfSimboloMenos("-");
+                MenendezJoshua mfFiguras = new MenendezJoshua();
 
-                oMfFiguras.mfF10(mfLecturaNivel(), oMfFiguras.getmfSimboloMas(), oMfFiguras.getmfSimboloMenos(), oMfFiguras.getSimboloLinea());
-                
+                mfFiguras.mjF1(mjLeertamanio());
+                mfFiguras.mjF2(mjLeertamanio());
+                mfFiguras.mjF3(mjLeertamanio());
+                mfFiguras.mjF4(mjLeertamanio());
+                mfFiguras.mjF5(mjLeertamanio());
+                mfFiguras.mjF6(mjLeertamanio());
+                mfFiguras.mjF7(mjLeertamanio());
+                mfFiguras.mjF8(mjLeertamanio());
+
+                MoralesFrancisco oMfFiguras = new MoralesFrancisco();
+
+                oMfFiguras.setSimboloLinea("_");
+                oMfFiguras.setmfSimboloMas("+");
+                oMfFiguras.setmfSimboloMenos("-");
+
+                oMfFiguras.mfF10(mfLecturaNivel(), oMfFiguras.getmfSimboloMas(), oMfFiguras.getmfSimboloMenos(),
+                                oMfFiguras.getSimboloLinea());
+
                 oMfFiguras.mfF11(mfLecturaNivel(), oMfFiguras.getmfSimboloMenos(), oMfFiguras.getSimboloLinea());
-                
+
                 oMfFiguras.mfF12(mfLecturaNivel());
-                
+
                 oMfFiguras.mfF13(mfLecturaNivel());
-                
+
                 oMfFiguras.mfF14(mfLecturaNivel());
-            
+
                 oMfFiguras.mfF15(mfLecturaNivel());
-            
+
                 oMfFiguras.mfF16(mfLecturaNivel(), oMfFiguras.getmfSimboloMenos(), oMfFiguras.getmfSimboloMas());
-            
+
                 oMfFiguras.mfF17(mfLecturaNivel());
 
-                
-    }
+        }
 
-    private static int mfLecturaNivel() {
-        
-        int mfNivel         = 0;
-        boolean mfControl   = true;
-        
-        do {
-            System.out.println("Ingresa el nivel que tendra la figura: ");
-            try{
-                mfNivel     = sc.nextInt();
-                mfControl   = false;
-            }catch(Exception e){
-                System.out.println("EL NIVEL INTRODUCIDO NO ES UN NUMERO VUELVA A INTENTARLO.");
+        private static int mfLecturaNivel() {
+
+                int mfNivel = 0;
+                boolean mfControl = true;
+
+                do {
+                        System.out.println("Ingresa el nivel que tendra la figura: ");
+                        try {
+                                mfNivel = sc.nextInt();
+                                mfControl = false;
+                        } catch (Exception e) {
+                                System.out.println("EL NIVEL INTRODUCIDO NO ES UN NUMERO VUELVA A INTENTARLO.");
+                                sc.next();
+                        }
+                } while (mfControl || mfNivel < 0);
                 sc.next();
-            }
-        } while (mfControl || mfNivel < 0);
-        sc.next();
-        return mfNivel;
-    }
+                return mfNivel;
+        }
 
-    private static int mmLecturaTamano() {
-    Scanner scanner = new Scanner(System.in);
+        private static int mmLecturaTamano() {
 
-        int mmTamano = 0;
-      
-        System.out.print("> Ingresa el tamaño que tendra la serie:  ");
-            try{
-                 mmTamano     = sc.nextInt();
-            }catch(Exception e){
-                 System.out.println(" EL NÚMERO INTRODUCIDO NO ES UN NUMERO, VUELVA A INTENTARLO.");
-                 sc.next();
-                  }  
-        
-        return mmTamano;
-                //  
+                Scanner scanner = new Scanner(System.in);
 
+                int mmTamano = 0;
 
-    }
+                System.out.print("> Ingresa el tamaño que tendra la serie:  ");
+                try {
+                        mmTamano = sc.nextInt();
+                } catch (Exception e) {
+                        System.out.println(" EL NÚMERO INTRODUCIDO NO ES UN NUMERO, VUELVA A INTENTARLO.");
+                        sc.next();
+                }
+
+                return mmTamano;
+                //
+
+        }
+
+        private static int mjLeertamanio() {
+                Scanner sc = new Scanner(System.in);
+
+                int mjTamanio = 0;
+                String mjIngreso;
+                Boolean mjTamaniovalido = false;
+
+                while (!mjTamaniovalido) {
+                        System.out.print("> Ingresa el tamaño que tendra la forma:  ");
+                        mjIngreso = sc.nextLine();
+
+                        if (mjIngreso.matches("^\\d+$")) {
+                                mjTamanio = Integer.parseInt(mjIngreso);
+                                mjTamaniovalido = true;
+                        } else {
+                                System.out.println(" EL VALOR INGRESADO NO ES VALIDO, INGRESE UN NUMERO ENTERO ");
+                        }
+                }
+
+                return mjTamanio;
+
+        }
+
 }
