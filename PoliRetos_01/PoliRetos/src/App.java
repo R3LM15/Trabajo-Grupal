@@ -3,35 +3,21 @@ import java.util.Scanner;
 public class App {
         public static Scanner sc = new Scanner(System.in);
 
-<<<<<<< HEAD
         public static void main(String[] args) throws Exception {
-=======
         System.out.println("      GRUPO #03      ");
         System.out.println("---- INTEGRANTES ----");
         System.out.println("->  Molina.Mateo");
         System.out.println("->  Morales.Francisco");
-        System.out.println("->  Zamira.Jimenez");
-        System.out.println("->  Marcillo.Marco");
-        System.out.println("->  ");
+        System.out.println("->  Zamira.Jimenez");   
+         System.out.println("->  Marcillo.Marco");
+        System.out.println("->  MenendezJoshua ");
         System.out.println("---- ----------- ----");
                     System.out.println(" ");
                     
                     
         System.out.println(">> Series numéricas");
                         System.out.println(" ");
->>>>>>> 92dd7fe8564c3426bb04dde52c9acc196f57f4fd
 
-                System.out.println("      GRUPO #03      ");
-                System.out.println("---- INTEGRANTES ----");
-                System.out.println("->  Molina.Mateo");
-                System.out.println("->  Morales.Francisco");
-                System.out.println("->  Zamira.Jimenez");
-                System.out.println("->  Menendez.Joshua  ");
-                System.out.println("---- ----------- ----");
-                System.out.println(" ");
-
-                System.out.println(">> Series numéricas");
-                System.out.println(" ");
 
                 MolinaMateo MMSeries;
                 MMSeries = new MolinaMateo();
@@ -66,10 +52,6 @@ public class App {
                 MMSeries.mmSN10(mmLecturaTamano());
                 System.out.println(" ");
 
-<<<<<<< HEAD
-                System.out.println(">> Figuras");
-                System.out.println(" ");
-=======
         System.out.println(">> Series de caracteres");
         System.out.println(" ");
         int nTermino=10;
@@ -98,7 +80,6 @@ public class App {
             System.out.println(" ");
             
             MoralesFrancisco oMfFiguras = new MoralesFrancisco();
->>>>>>> 92dd7fe8564c3426bb04dde52c9acc196f57f4fd
 
                 MenendezJoshua mfFiguras = new MenendezJoshua();
 
@@ -111,7 +92,6 @@ public class App {
                 mfFiguras.mjF7(mjLeertamanio());
                 mfFiguras.mjF8(mjLeertamanio());
 
-                MoralesFrancisco oMfFiguras = new MoralesFrancisco();
 
                 oMfFiguras.setSimboloLinea("_");
                 oMfFiguras.setmfSimboloMas("+");
