@@ -54,20 +54,19 @@ public class App {
 
         System.out.println(">> Series de caracteres");
         System.out.println(" ");
-        int nTermino=10;
         String caracter1="+" ,caracter2="-",caracter3="*",caracter4="/";
         char limiteLetra='h';
 
         MarcoMarcillo MMserie=new MarcoMarcillo();
-        MMserie.mmSC1(nTermino,caracter1,caracter2);
+        MMserie.mmSC1(mmNumTermino(),caracter1,caracter2);
         System.out.println("");
-        MMserie.mmSC2(nTermino,caracter1);
+        MMserie.mmSC2(mmNumTermino(),caracter1);
         System.out.println("");  
-        MMserie.mmSC3(nTermino,caracter1);
+        MMserie.mmSC3(mmNumTermino(),caracter1);
         System.out.println("");  
-        MMserie.mmSC4(nTermino,caracter1,caracter2,caracter3,caracter4);
+        MMserie.mmSC4(mmNumTermino(),caracter1,caracter2,caracter3,caracter4);
         System.out.println("");  
-        MMserie.mmSC5(nTermino,caracter1,caracter2,caracter3,caracter4);
+        MMserie.mmSC5(mmNumTermino(),caracter1,caracter2,caracter3,caracter4);
         System.out.println(""); 
         MMserie.mmSC7(limiteLetra);
         System.out.println(""); 
@@ -153,6 +152,18 @@ public class App {
                 //
 
         }
+        private static int mmNumTermino() {
+                Scanner sc = new Scanner(System.in);
+                int nTermino = 1;
+                        System.out.print("> Ingrese el numero de terminos que tendra la serie de caracteres:  ");
+                try {
+                        nTermino = sc.nextInt();
+                } catch (Exception e) {
+                        System.out.println(" Vuelva a intentarlo.");
+                        sc.next();
+                }
+                return nTermino;
+            }  
 
         private static int mjLeertamanio() {
                 Scanner sc = new Scanner(System.in);
