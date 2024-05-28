@@ -1,9 +1,16 @@
 public class MoralesFrancisco {
+    
     private int mfNivel;
+    private String mfSimbolo1;
+    private String mfSimbolo2;
+    private String mfSimbolo3;
 
-    private String mfSimboloMas;
-    private String mfSimboloMenos;
-    private String mfSimboloLinea;
+    public MoralesFrancisco(int mfNivel, String mfSimbolo1, String mfSimbolo2, String mfSimbolo3){
+        setmfNivel(mfNivel);
+        setmfSimbolo1(mfSimbolo1);
+        setmfSimbolo2(mfSimbolo2);
+        setSimbolo3(mfSimbolo3);
+    }
     
     public int getmfNivel() {
         return mfNivel;
@@ -13,36 +20,45 @@ public class MoralesFrancisco {
         this.mfNivel = mfNivel;
     }
     
-    public String getmfSimboloMas() {
-        return mfSimboloMas;
+    public String getmfSimbolo1() {
+        return mfSimbolo1;
     }
 
-    public void setmfSimboloMas(String mfSimboloMas) {
-        this.mfSimboloMas = mfSimboloMas;
+    public void setmfSimbolo1(String mfSimbolo1) {
+        if (mfSimbolo1 == null)
+            this.mfSimbolo1 = " ";
+        else
+            this.mfSimbolo1 = mfSimbolo1;
     }
     
-    public String getmfSimboloMenos() {
-        return mfSimboloMenos;
+    public String getmfSimbolo2() {
+        return mfSimbolo2;
     }
     
-    public void setmfSimboloMenos(String mfSimboloMenos) {
-        this.mfSimboloMenos = mfSimboloMenos;
+    public void setmfSimbolo2(String mfSimbolo2) {
+        if (mfSimbolo2 == null)
+            this.mfSimbolo2 = " ";
+        else
+            this.mfSimbolo2 = mfSimbolo2;
     }
     
-    public String getSimboloLinea() {
-        return mfSimboloLinea;
+    public String getSimbolo3() {
+        return mfSimbolo3;
     }
 
-    public void setSimboloLinea(String mfSimboloLinea) {
-        this.mfSimboloLinea = mfSimboloLinea;
+    public void setSimbolo3(String mfSimbolo3) {
+        if (mfSimbolo3 == null)
+            this.mfSimbolo3 = " ";
+        else
+            this.mfSimbolo3 = mfSimbolo3;
     }
 
-    public void mfF10(int mfNivel, String mfSimboloMas, String mfSimboloMenos, String mfSimboloLinea){
+    public void mfF10(){
         
         System.out.println("Figura 10: ");        
         for (int i = 0; i < mfNivel; i++) {
 
-            System.out.println(i % 2 == 0 ? mfSimboloLinea + mfSimboloMas + mfSimboloLinea: mfSimboloLinea + mfSimboloMenos + mfSimboloLinea);
+            System.out.println(i % 2 == 0 ? mfSimbolo3 + mfSimbolo1 + mfSimbolo3: mfSimbolo3 + mfSimbolo2 + mfSimbolo3);
             for (int j = 0; j < i+1; j++) {
                 System.out.print("    ");
             }
@@ -52,7 +68,7 @@ public class MoralesFrancisco {
         System.out.println("");
     }
     
-    public void mfF11(int mfNivel, String mfSimboloMenos, String mfSimboloLinea){
+    public void mfF11(){
         
         int espaciado = 0; 
         System.out.println("Figura 11: ");        
@@ -75,7 +91,7 @@ public class MoralesFrancisco {
         System.out.println("");
     }
 
-    public void mfF12(int mfNivel){
+    public void mfF12(){
 
         int num;
         System.out.println("Figura 12: ");
@@ -90,7 +106,7 @@ public class MoralesFrancisco {
         System.out.println();
     }
     
-    public void mfF13(int mfNivel){
+    public void mfF13(){
 
         System.out.println("Figura 13: ");
 
@@ -103,7 +119,7 @@ public class MoralesFrancisco {
         System.out.println();
     }
 
-    public void mfF14(int mfNivel){
+    public void mfF14(){
         int mfEspaciado = mfNivel;
         System.out.println("Figura 14: ");
         
@@ -125,7 +141,7 @@ public class MoralesFrancisco {
         System.out.println("");
     }
 
-    public void mfF15(int mfNivel){
+    public void mfF15(){
         
         System.out.println("Figura 15: ");
         
@@ -143,22 +159,22 @@ public class MoralesFrancisco {
         System.out.println("");
     }
 
-    public void mfF16(int mfNivel, String mfSimboloMenos, String mfSimboloMas){
+    public void mfF16(){
         
         System.out.println("Figura 16: ");
 
         for (int i = 0; i < mfNivel; i++) {
             if (i % 4 == 0 || i == 0){
-                System.out.println(mfSimboloMas +  "               " + mfSimboloMas);
+                System.out.println(mfSimbolo1 +  "               " + mfSimbolo1);
             }else if(i % 2 != 0){
-                System.out.println("    " + mfSimboloMenos +   "       " + mfSimboloMenos);
+                System.out.println("    " + mfSimbolo2 +   "       " + mfSimbolo2);
             }else{
-                System.out.println("        " + mfSimboloMas);
+                System.out.println("        " + mfSimbolo1);
             }
         }
     }
 
-    public void mfF17(int mfNivel){
+    public void mfF17(){
         
         System.out.println("Figura 17: ");
 
