@@ -124,7 +124,7 @@ public class App {
                                 sc.next();
                         }
                 } while (control || nivel < 0);
-                sc.close();
+                sc.next();
                 return nivel;
         }
 
