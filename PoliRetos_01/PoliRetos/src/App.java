@@ -55,10 +55,10 @@ public class App {
                 MMSeries.mmSN10();
                 System.out.println(" ");
 
-<<<<<<< HEAD
+
                 System.out.println(">> Figuras");
                 System.out.println(" ");
-=======
+
 
                 System.out.println(">> Series de caracteres");
                 System.out.println(" ");
@@ -89,7 +89,6 @@ public class App {
 
 
                 MenendezJoshua mfFiguras = new MenendezJoshua(nivelTamano);
->>>>>>> 0e40ac8e1a164f55f5ff708a46b60ed756ab7633
 
                 mfFiguras.mjF1();
                 mfFiguras.mjF2();
