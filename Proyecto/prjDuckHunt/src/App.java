@@ -25,28 +25,28 @@ public class App {
 
     private static void mostrarMenu() {
         System.out.println("Menú:");
-        System.out.println("1. Opción 1");
-        System.out.println("2. Opción 2");
-        System.out.println("3. Opción 3");
+        System.out.println("1. Jugar");
+        System.out.println("2. Dificultad");
+        System.out.println("3. Creditos");
         System.out.println("4. Salir");
     }
 
     private static void procesarOpcion(int opcion) {
         switch (opcion) {
             case 1:
-                System.out.println("Has seleccionado la Opción 1");
+                System.out.println("Se procede a ejecutar el codigo del juego...");
                 break;
             case 2:
-                System.out.println("Has seleccionado la Opción 2");
+                System.out.println("Se le muestra al jugador una lista de opciones para varilas la dificultad...");
                 break;
             case 3:
-                System.out.println("Has seleccionado la Opción 3");
+                System.out.println("Se muestran los integrantes del grupo...");
                 break;
             case 4:
                 System.out.println("Saliendo...");
                 break;
             default:
-                System.out.println("Opción no válida");
+                System.out.println("Opción no válida, porfavor ingrese una opcion correcta.");
                 break;
         }
     }
