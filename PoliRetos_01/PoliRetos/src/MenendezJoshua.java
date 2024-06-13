@@ -1,7 +1,20 @@
 public class MenendezJoshua {
     
+    private int mjLeertamanio;
+    
+    public MenendezJoshua(int mjLeertamanio){
+        setMjLeertamanio(mjLeertamanio);
+    }
 
-    public void mjF1(int mjLeertamanio) {
+    public int getMjLeertamanio() {
+        return mjLeertamanio;
+    }
+
+    public void setMjLeertamanio(int mjLeertamanio) {
+        this.mjLeertamanio = mjLeertamanio;
+    }
+
+    public void mjF1() {
 
         int mjB = 1;
 
@@ -42,7 +55,7 @@ public class MenendezJoshua {
         System.out.println();
     }
 
-    public void mjF2(int mjLeertamanio) {
+    public void mjF2() {
 
         int mjB = 1;
         String mjSimbolo;
@@ -75,7 +88,7 @@ public class MenendezJoshua {
         System.out.println();
     }
 
-    public void mjF3(int mjLeertamanio) {
+    public void mjF3() {
         int mjA = 1;
         do {
             int mjB = 1;
@@ -91,7 +104,7 @@ public class MenendezJoshua {
         System.out.println();
     }
 
-    public void mjF4(int mjLeertamanio) {
+    public void mjF4() {
 
         int mjA = 1;
         do {
@@ -114,7 +127,7 @@ public class MenendezJoshua {
 
     }
 
-    public void mjF5(int mjLeertamanio) {
+    public void mjF5() {
 
         int mjA = mjLeertamanio;
         do {
@@ -138,7 +151,7 @@ public class MenendezJoshua {
 
     }
 
-    public void mjF6(int mjLeertamanio) {
+    public void mjF6() {
         int mjA = 1;
         do {
 
@@ -160,7 +173,7 @@ public class MenendezJoshua {
 
     }
 
-    public void mjF7(int mjLeertamanio) {
+    public void mjF7() {
         int mjA = 0;
         do {
 
@@ -187,7 +200,7 @@ public class MenendezJoshua {
 
     }
 
-    public void mjF8(int mjLeertamanio) {
+    public void mjF8() {
 
         for (int mjA = 0; mjA < mjLeertamanio; mjA++) {
 
