@@ -1,7 +1,7 @@
+import java.util.Scanner;
+
 public class PoliRetos {
-    String frase;
-
-
+    static  String mmfrase;
 
     public static void integrantes() {
         System.out.println("      GRUPO #03      ");
@@ -16,9 +16,44 @@ public class PoliRetos {
 
     }
     public static void CadenaCaracteres() {
+    System.out.println(">> Cadena de caracteres:");
+    
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Por favor, ingresa una frase:     ");
+    String mmfrase = scanner.nextLine().toLowerCase(); 
+    
+    System.out.print("C01)      ");
+    int contadorA = 0, contadorE = 0, contadorI = 0, contadorO = 0, contadorU = 0;
+    
+            for (int i = 0; i < mmfrase.length(); i++) {
+                char caracter = mmfrase.charAt(i);
+                switch (caracter) {
+                    case 'a' -> contadorA++;
+                    case 'e' -> contadorE++;
+                    case 'i' -> contadorI++;
+                    case 'o' -> contadorO++;
+                    case 'u' -> contadorU++;
+                }
+            }
+            int total = contadorA + contadorE + contadorI + contadorO + contadorU;
+            System.out.println("tiene " + total + " Vocales");
 
-        System.out.println(">> Cadena de caracteres:");
-     
+    System.out.print("C02)      ");
+        int contador = 0;
+            for (int i = 0; i < mmfrase.length(); i++) {
+                char caracter = mmfrase.charAt(i);
+                switch (caracter) {
+                    case 'a' -> contadorA++;
+                    case 'e' -> contadorE++;
+                    case 'i' -> contadorI++;
+                    case 'o' -> contadorO++;
+                    case 'u' -> contadorU++;
+                }
+                }
+            System.out.println("tiene " + (mmfrase.length() - total) + " letras");
+
+
+
 
     
     }    
@@ -41,14 +76,14 @@ public class PoliRetos {
 
 
     public String getFrase() {
-        return frase;
+        return mmfrase;
     }
 
-    public void setFrase(String frase) {
-        if (frase == null)
-            this.frase = " ";
+    public void setFrase(String mmfrase) {
+        if (mmfrase == null)
+            this.mmfrase = " ";
         else
-            this.frase = frase;
+            this.mmfrase = mmfrase;
        
     }
 
