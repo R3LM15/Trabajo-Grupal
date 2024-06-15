@@ -17,15 +17,13 @@ public class App {
 
                 int nivelTamano = lecturaNivelTamano();
                 String caracter1 = lecturaCaracter();
-                String mmfrase = "ballena";
-        
-                
+
                 System.out.println(" ");
                 System.out.println(">> Series numéricas");
                 System.out.println(" ");
 
 
-                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , mmfrase);
+                MolinaMateo MMSeries = new MolinaMateo(nivelTamano);
 
                 MMSeries.mmSN1();
                 System.out.println(" ");
@@ -55,10 +53,6 @@ public class App {
                 System.out.println(" ");
 
                 MMSeries.mmSN10();
-                System.out.println(" ");
-
-
-                System.out.println(">> Figuras");
                 System.out.println(" ");
 
 
@@ -113,23 +107,6 @@ public class App {
                 oMfFiguras.mfF16();
                 oMfFiguras.mfF17();
 
-                //poliretos 2da PArte
-
-
-                System.out.println(">> Cadena de caracteres:");
-                System.out.println(" ");
-                
-                
-                System.out.println(mmfrase);
-                MMSeries.mmcc1();
-                MMSeries.mmcc2();
-
-                
-
-
-
-
-
         }
 
         private static int lecturaNivelTamano() {
@@ -169,11 +146,4 @@ public class App {
                 sc.close();
                 return caracter;
         }
-
-     
-        
 }
-
-       
-
-
