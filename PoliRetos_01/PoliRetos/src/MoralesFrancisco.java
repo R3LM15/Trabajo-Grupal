@@ -1,15 +1,29 @@
 public class MoralesFrancisco {
     
     private int mfNivel;
+    private int numero;
+    private int potencia;
     private String mfSimbolo1;
     private String mfSimbolo2;
     private String mfSimbolo3;
+    private String mfFrase;
+    private String[] mfNombreApellido;
+    private String[] mfAnagramas;
+    private String[] mfRespuestaAnagramas;
 
-    public MoralesFrancisco(int mfNivel, String mfSimbolo1, String mfSimbolo2, String mfSimbolo3){
+
+
+    public MoralesFrancisco(int mfNivel, int numero, int potencia, String mfSimbolo1, String mfSimbolo2, String mfSimbolo3, String mfFrase, String mfNombre, String mfApellido){
         setmfNivel(mfNivel);
+        setNumero(numero);
+        setPotencia(potencia);
         setmfSimbolo1(mfSimbolo1);
         setmfSimbolo2(mfSimbolo2);
         setSimbolo3(mfSimbolo3);
+        setMfFrase(mfFrase);
+        setMfNombreApellido(mfNombre, mfApellido);
+        this.mfAnagramas = new String[] {"Delira", "Ballena", "Alondra", "España", "Enrique"};
+        this.mfRespuestaAnagramas = new String[] {"Lidera", "Llenaba", "Ladrona", "Apañes", "Quieren"};
     }
     
     public int getmfNivel() {
@@ -20,6 +34,22 @@ public class MoralesFrancisco {
         this.mfNivel = mfNivel;
     }
     
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public int getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(int potencia) {
+        this.potencia = potencia;
+    }
+
     public String getmfSimbolo1() {
         return mfSimbolo1;
     }
@@ -51,6 +81,25 @@ public class MoralesFrancisco {
             this.mfSimbolo3 = " ";
         else
             this.mfSimbolo3 = mfSimbolo3;
+    }
+
+    public String getMfFrase() {
+        return mfFrase;
+    }
+
+    public void setMfFrase(String mfFrase) {
+        if(mfFrase == null)
+            this.mfFrase = " ";
+        else
+            this.mfFrase = mfFrase;
+    }
+
+    public String[] getMfNombreApellido() {
+        return mfNombreApellido;
+    }
+
+    public void setMfNombreApellido(String mfNombre, String mfApellido) {
+        this.mfNombreApellido = new String[] {mfNombre, mfApellido};
     }
 
     public void mfF10(){
@@ -189,4 +238,112 @@ public class MoralesFrancisco {
         }
     }
 
+    public void mfCadenaCaracter7(){
+        System.out.println("CC_7: " + mfFrase.toUpperCase().replace("J", ""));
+    }
+
+    public void mfCadenaCaracter8(){
+        Boolean exit;
+        for (int i = 0; i < mfAnagramas.length; i++) {
+            exit = true;
+            System.out.println("CC_8: ");
+            System.out.println("Ingrese el anagrama de " + mfAnagramas[i] + " tiene 3 intentos.");
+            for (int j = 1; j <= 3 && exit ; j++) {
+                System.out.println("Intento " + j);
+                try {
+                    if (App.sc.next().toUpperCase().equals(mfRespuestaAnagramas[i].toUpperCase())){
+                        exit = false;
+                        System.out.print("ES CORRECTO");
+                    }
+                    
+                } catch (Exception AnagramaNoValido) {}
+                System.out.println("");
+            }
+            System.out.println("La respuesta era " + mfRespuestaAnagramas[i]);
+            System.out.println();
+        }
+    }
+    
+    public void mfArrays4(){
+        int tamano;
+        System.out.println("A_4: ");
+        char[] mfNombreChar = mfNombreApellido[0].toCharArray();
+        char[] mfApellidoChar = mfNombreApellido[1].toCharArray();
+        
+        if (mfNombreChar.length >= mfApellidoChar.length)
+        tamano = mfNombreChar.length - 1;
+        else
+        tamano = mfApellidoChar.length - 1;
+        
+        System.out.println("");
+        
+        for (int i = 0; i <= tamano; i++) {
+            for (int j = 0; j <= tamano; j++) {
+                if (i == j && mfNombreChar.length >= i + 1) {
+                    System.out.print(mfNombreChar[i]);
+                } else if (j == tamano - i && mfApellidoChar.length >= i + 1) {
+                    System.out.print(mfApellidoChar[i]);
+                } else {
+                    System.out.print(" ");
+                }
+                
+                System.out.print("   ");
+            }
+            System.out.println("");
+        }
+    }
+    
+    public void mfLoading5(){
+        System.out.println("L_5: ");
+        int porcentaje = 0;
+        for (int i = 0; i <= 20; i++) {
+            String barra1   = "\r"
+            + "["
+            + "=".repeat(i) 
+            + ">"
+            + ".".repeat(20-i)
+                            + "] "
+                            + porcentaje
+                            + "%";
+                            System.out.print(barra1);
+                            porcentaje = porcentaje + 5;
+                            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {}
+        }
+        System.out.println("");
+    }
+    
+    public void mfLoading6(){
+        System.out.println("L_6: ");
+        System.out.println("");
+        int porcentaje = 0;
+        for (int i = 0; i <= 20; i++) {
+            String barra2   = "\r"
+            + "["
+                            + " ".repeat(i) 
+                            + "<=>"
+                            + " ".repeat(20-i)
+                            + "] "
+                            + porcentaje
+                            + "%";
+            System.out.print(barra2);
+            porcentaje = porcentaje + 5;
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {}
+        } 
+        System.out.println("");
+    }
+                    
+    public void mfRecursion4(){
+        System.out.println("R_4: ");
+        System.out.println("El resultado de: " + numero + "^" + potencia + " es: " + mfpotencia(numero, potencia));
+    }
+
+    public long mfpotencia(int numero, int potencia){
+        if (potencia == 1)
+            return numero;
+        return numero*mfpotencia(numero, potencia - 1);
+    }
 }
