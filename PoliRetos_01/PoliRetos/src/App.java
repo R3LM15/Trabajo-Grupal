@@ -90,16 +90,18 @@ public class App {
                 System.out.println(" ");
 
 
-                MenendezJoshua mfFiguras = new MenendezJoshua(nivelTamano);
+                MenendezJoshua mjpRetos = new MenendezJoshua(nivelTamano);
+                
 
-                mfFiguras.mjF1();
-                mfFiguras.mjF2();
-                mfFiguras.mjF3();
-                mfFiguras.mjF4();
-                mfFiguras.mjF5();
-                mfFiguras.mjF6();
-                mfFiguras.mjF7();
-                mfFiguras.mjF8();
+
+                mjpRetos.mjF1();
+                mjpRetos.mjF2();
+                mjpRetos.mjF3();
+                mjpRetos.mjF4();
+                mjpRetos.mjF5();
+                mjpRetos.mjF6();
+                mjpRetos.mjF7();
+                mjpRetos.mjF8();
 
 
                 MoralesFrancisco oMfFiguras = new MoralesFrancisco(nivelTamano, caracter1, "-", "_");
@@ -120,18 +122,29 @@ public class App {
                 System.out.println(" ");
                 
                 
-                System.out.println("Frase: "+mmfrase);
+                System.out.println(mmfrase);
                 MMSeries.mmcc1();
                 MMSeries.mmcc2();
 
-                System.out.println(">> Arrays");
+                mjpRetos.mjC03();
+                mjpRetos.mjC04();
+                
+
+
+
+                System.out.println(">> Arrays:");
                 System.out.println(" ");
-                MMSeries.mmar2();
+                mjpRetos.mjA01();
 
 
+                System.out.println(">> Loading:");
+                System.out.println(" ");
+                mjpRetos.mjL01();
+                mjpRetos.mjL02();
 
-
-
+                System.out.println(">> Recursion:");
+                System.out.println(" ");
+                mjpRetos.mjR01();
         }
 
         private static int lecturaNivelTamano() {
