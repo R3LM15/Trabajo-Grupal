@@ -1,9 +1,12 @@
+
 public class MolinaMateo {
     
     private int mmTamano;
+    private String mmfrase;
 
-    public MolinaMateo(int mmTamano){
+    public MolinaMateo(int mmTamano , String mmfrase){
         setmmTamano(mmTamano);
+        setMmfrase(mmfrase);
     }
 
     public int getmmTamano() {
@@ -15,6 +18,16 @@ public class MolinaMateo {
     }
 
 
+    public String getMmfrase() {
+        return mmfrase;
+    }
+
+    public void setMmfrase(String mmfrase) {
+        this.mmfrase = "";
+        if(mmfrase != null)
+        this.mmfrase = mmfrase.toUpperCase();
+    }
+    
     public void mmSN1(){
         System.out.print("SN1:  ");
 
@@ -177,6 +190,64 @@ public class MolinaMateo {
     }
 
     
+    //CadenaCaracteres
+
+public void mmcc1() {
     
+    
+   
+    
+    System.out.print("C01)      ");
+    int contadorA = 0, contadorE = 0, contadorI = 0, contadorO = 0, contadorU = 0;
+    
+            for (int i = 0; i < mmfrase.length(); i++) {
+                char caracter = mmfrase.charAt(i);
+                switch (caracter) {
+                    case 'a' -> contadorA++;
+                    case 'e' -> contadorE++;
+                    case 'i' -> contadorI++;
+                    case 'o' -> contadorO++;
+                    case 'u' -> contadorU++;
+                }
+            }
+            int total = contadorA + contadorE + contadorI + contadorO + contadorU;
+            System.out.println("tiene " + total + " Vocales");
+
+    
+    }    
+
+
+
+
+
+    public void mmcc2(){
+        System.out.print("SN10: ");
+        
+        System.out.print("C02)      ");
+        int contadorA = 0, contadorE = 0, contadorI = 0, contadorO = 0, contadorU = 0;
+            for (int i = 0; i < mmfrase.length(); i++) {
+                char caracter = mmfrase.charAt(i);
+                switch (caracter) {
+                    case 'a' -> contadorA++;
+                    case 'e' -> contadorE++;
+                    case 'i' -> contadorI++;
+                    case 'o' -> contadorO++;
+                    case 'u' -> contadorU++;
+                }
+            }
+            int total = contadorA + contadorE + contadorI + contadorO + contadorU;
+            System.out.println("tiene " + (mmfrase.length() - total) + " letras");
+       
+    }
+
+    
+
+
+
+
+
+
+
+
 
 }

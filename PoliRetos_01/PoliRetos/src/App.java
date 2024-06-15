@@ -28,81 +28,81 @@ public class App {
                 System.out.println(" ");
 
 
-                // MolinaMateo MMSeries = new MolinaMateo(nivelTamano);
+                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1);
 
-                // MMSeries.mmSN1();
-                // System.out.println(" ");
+                MMSeries.mmSN1();
+                System.out.println(" ");
 
-                // MMSeries.mmSN2();
-                // System.out.println(" ");
+                MMSeries.mmSN2();
+                System.out.println(" ");
 
-                // MMSeries.mmSN3();
-                // System.out.println(" ");
+                MMSeries.mmSN3();
+                System.out.println(" ");
 
-                // MMSeries.mmSN4();
-                // System.out.println(" ");
+                MMSeries.mmSN4();
+                System.out.println(" ");
 
-                // MMSeries.mmSN5();
-                // System.out.println(" ");
+                MMSeries.mmSN5();
+                System.out.println(" ");
 
-                // MMSeries.mmSN6();
-                // System.out.println(" ");
+                MMSeries.mmSN6();
+                System.out.println(" ");
 
-                // MMSeries.mmSN7();
-                // System.out.println(" ");
+                MMSeries.mmSN7();
+                System.out.println(" ");
 
-                // MMSeries.mmSN8();
-                // System.out.println(" ");
+                MMSeries.mmSN8();
+                System.out.println(" ");
 
-                // MMSeries.mmSN9();
-                // System.out.println(" ");
+                MMSeries.mmSN9();
+                System.out.println(" ");
 
-                // MMSeries.mmSN10();
-                // System.out.println(" ");
-
-
-                // System.out.println(">> Figuras");
-                // System.out.println(" ");
+                MMSeries.mmSN10();
+                System.out.println(" ");
 
 
-                // System.out.println(">> Series de caracteres");
-                // System.out.println(" ");
+                System.out.println(">> Figuras");
+                System.out.println(" ");
 
 
-                // MarcoMarcillo MMserie = new MarcoMarcillo(nivelTamano, caracter1, "-", "*", "/", 'h');
+                System.out.println(">> Series de caracteres");
+                System.out.println(" ");
+
+
+                MarcoMarcillo MMserie = new MarcoMarcillo(nivelTamano, caracter1, "-", "*", "/", 'h');
                 
-                // MMserie.mmSC1();
-                // System.out.println("");
-                // MMserie.mmSC2();
-                // System.out.println("");  
-                // MMserie.mmSC3();
-                // System.out.println("");  
-                // MMserie.mmSC4();
-                // System.out.println("");  
-                // MMserie.mmSC5();
-                // System.out.println(""); 
-                // MMserie.mmSC7();
-                // System.out.println(""); 
-                // MMserie.mmSC8();
-                // System.out.println(""); 
-                // MMserie.mmSC9();
-                // System.out.println("");                  
+                MMserie.mmSC1();
+                System.out.println("");
+                MMserie.mmSC2();
+                System.out.println("");  
+                MMserie.mmSC3();
+                System.out.println("");  
+                MMserie.mmSC4();
+                System.out.println("");  
+                MMserie.mmSC5();
+                System.out.println(""); 
+                MMserie.mmSC7();
+                System.out.println(""); 
+                MMserie.mmSC8();
+                System.out.println(""); 
+                MMserie.mmSC9();
+                System.out.println("");                  
 
 
-                // System.out.println(">> Figuras");
-                // System.out.println(" ");
+                System.out.println(">> Figuras");
+                System.out.println(" ");
 
 
-                // MenendezJoshua mfFiguras = new MenendezJoshua(nivelTamano);
+                MenendezJoshua mfFiguras = new MenendezJoshua(nivelTamano);
 
-                // mfFiguras.mjF1();
-                // mfFiguras.mjF2();
-                // mfFiguras.mjF3();
-                // mfFiguras.mjF4();
-                // mfFiguras.mjF5();
-                // mfFiguras.mjF6();
-                // mfFiguras.mjF7();
-                // mfFiguras.mjF8();
+                mfFiguras.mjF1();
+                mfFiguras.mjF2();
+                mfFiguras.mjF3();
+                mfFiguras.mjF4();
+                mfFiguras.mjF5();
+                mfFiguras.mjF6();
+                mfFiguras.mjF7();
+                mfFiguras.mjF8();
 
                 MoralesFrancisco oMfFiguras = new MoralesFrancisco(nivelTamano, numA, numB, caracter1, "-", "_", frase1, nombre, apellido);
 
@@ -114,14 +114,59 @@ public class App {
                 oMfFiguras.mfF15();
                 oMfFiguras.mfF16();
                 oMfFiguras.mfF17();
+                
+                //poliretos 2da PArte
+                
+                System.out.println(">> Cadena de caracteres:");
+                System.out.println(" ");
+                
+                System.out.println(frase1);
+                MMSeries.mmcc1();
+                MMSeries.mmcc2();
+                //CadenaC3
+                //CadenaC4
+                //CadenaC5
+                //CadenaC6
                 oMfFiguras.mfCadenaCaracter7();
                 oMfFiguras.mfCadenaCaracter8();
+                //CadenaC9
+
+                System.out.println(">> Arrays:");
+                System.out.println(" ");
+                
+                //Figura1
+                //Figura2
+                //Figura3
                 oMfFiguras.mfArrays4();
+                //Figura4
+                
+                System.out.println(">> Loading:");
+                System.out.println(" ");
+                
+                //Loading1
+                //Loading2
+                //Loading3
+                //Loading4
                 oMfFiguras.mfLoading5();
                 oMfFiguras.mfLoading6();
+                //Loading7
+                //Loading8
+                //Loading9
+                //Loading10
+                //Loading11
+                //Loading12
+                
+                System.out.println(">> Recursion:");
+                System.out.println(" ");
+                
+                //Recursividad1
+                //Recursividad2
+                //Recursividad3
                 oMfFiguras.mfRecursion4();
+                //Recursividad5
+                //Recursividad6
         }
-
+        
         private static int lecturaNivelTamano() {
 
                 int nivel = 0;

@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 public class MoralesFrancisco {
     
     private int mfNivel;
@@ -241,14 +239,14 @@ public class MoralesFrancisco {
     }
 
     public void mfCadenaCaracter7(){
-        System.out.println(mfFrase);
-        System.out.println(mfFrase.toUpperCase().replace("J", ""));
+        System.out.println("CC_7: " + mfFrase.toUpperCase().replace("J", ""));
     }
 
     public void mfCadenaCaracter8(){
         Boolean exit;
         for (int i = 0; i < mfAnagramas.length; i++) {
             exit = true;
+            System.out.println("CC_8: ");
             System.out.println("Ingrese el anagrama de " + mfAnagramas[i] + " tiene 3 intentos.");
             for (int j = 1; j <= 3 && exit ; j++) {
                 System.out.println("Intento " + j);
@@ -257,7 +255,7 @@ public class MoralesFrancisco {
                         exit = false;
                         System.out.print("ES CORRECTO");
                     }
-                        
+                    
                 } catch (Exception AnagramaNoValido) {}
                 System.out.println("");
             }
@@ -265,19 +263,20 @@ public class MoralesFrancisco {
             System.out.println();
         }
     }
-
+    
     public void mfArrays4(){
         int tamano;
+        System.out.println("A_4: ");
         char[] mfNombreChar = mfNombreApellido[0].toCharArray();
         char[] mfApellidoChar = mfNombreApellido[1].toCharArray();
-
+        
         if (mfNombreChar.length >= mfApellidoChar.length)
-            tamano = mfNombreChar.length - 1;
+        tamano = mfNombreChar.length - 1;
         else
-            tamano = mfApellidoChar.length - 1;
-
+        tamano = mfApellidoChar.length - 1;
+        
         System.out.println("");
-
+        
         for (int i = 0; i <= tamano; i++) {
             for (int j = 0; j <= tamano; j++) {
                 if (i == j && mfNombreChar.length >= i + 1) {
@@ -293,31 +292,35 @@ public class MoralesFrancisco {
             System.out.println("");
         }
     }
-
+    
     public void mfLoading5(){
+        System.out.println("L_5: ");
         int porcentaje = 0;
         for (int i = 0; i <= 20; i++) {
             String barra1   = "\r"
-                            + "["
-                            + "=".repeat(i) 
-                            + ">"
-                            + ".".repeat(20-i)
+            + "["
+            + "=".repeat(i) 
+            + ">"
+            + ".".repeat(20-i)
                             + "] "
                             + porcentaje
                             + "%";
-            System.out.print(barra1);
-            porcentaje = porcentaje + 5;
-            try {
+                            System.out.print(barra1);
+                            porcentaje = porcentaje + 5;
+                            try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {}
         }
+        System.out.println("");
     }
-
+    
     public void mfLoading6(){
+        System.out.println("L_6: ");
+        System.out.println("");
         int porcentaje = 0;
         for (int i = 0; i <= 20; i++) {
             String barra2   = "\r"
-                            + "["
+            + "["
                             + " ".repeat(i) 
                             + "<=>"
                             + " ".repeat(20-i)
@@ -330,9 +333,11 @@ public class MoralesFrancisco {
                 Thread.sleep(500);
             } catch (InterruptedException e) {}
         } 
+        System.out.println("");
     }
-
+                    
     public void mfRecursion4(){
+        System.out.println("R_4: ");
         System.out.println("El resultado de: " + numero + "^" + potencia + " es: " + mfpotencia(numero, potencia));
     }
 
