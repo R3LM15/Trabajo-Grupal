@@ -120,11 +120,13 @@ public class App {
                 System.out.println(" ");
                 
                 
-                System.out.println(mmfrase);
+                System.out.println("Frase: "+mmfrase);
                 MMSeries.mmcc1();
                 MMSeries.mmcc2();
 
-                
+                System.out.println(">> Arrays");
+                System.out.println(" ");
+                MMSeries.mmar2();
 
 
 

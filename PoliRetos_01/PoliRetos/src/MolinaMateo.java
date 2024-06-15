@@ -1,6 +1,6 @@
-
+import java.util.Scanner;
 public class MolinaMateo {
-    
+    public static Scanner sc = new Scanner(System.in);
     private int mmTamano;
     private String mmfrase;
 
@@ -239,7 +239,62 @@ public void mmcc1() {
        
     }
 
+    public void mmar2(){
+        System.out.print("A02)      ");
+      
+        
+        int mmtamano = 10;
+        String mmcaracter = "*";
+        String vacio = " ";
+
+
+        System.out.println();
+        System.out.println(" Mi nombre es Mateo Molina");
+        System.out.println();
+
+        for(int i=1; i<=mmtamano; i++){
+            System.out.print(mmcaracter);
+            System.out.print(mmcaracter);
     
+                for(int a=1; a<=i; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+    
+                for(int a=1; a<=mmtamano*2-2*i; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+    
+                for(int a=1; a<=i; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+                
+                for(int a=1; a<=mmtamano/2; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+    
+                for(int a=1; a<=i; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+    
+                for(int a=1; a<=mmtamano*2-2*i; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+    
+                for(int a=1; a<=i; a++)
+                    System.out.print(vacio);
+                    System.out.print(mmcaracter);
+                    System.out.print(mmcaracter);
+            
+               
+            System.out.println(vacio);    
+            }
+        }
 
 
 
@@ -249,4 +304,13 @@ public void mmcc1() {
 
 
 
-}
+    }
+
+
+
+
+
+
+
+
+
