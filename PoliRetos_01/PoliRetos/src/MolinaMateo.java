@@ -25,7 +25,7 @@ public class MolinaMateo {
     public void setMmfrase(String mmfrase) {
         this.mmfrase = "";
         if(mmfrase != null)
-        this.mmfrase = mmfrase.toUpperCase();
+        this.mmfrase = mmfrase.toLowerCase();
     }
     
     public void mmSN1(){
@@ -221,19 +221,18 @@ public void mmcc1() {
 
 
     public void mmcc2(){
-        System.out.print("SN10: ");
-        
         System.out.print("C02)      ");
         int contadorA = 0, contadorE = 0, contadorI = 0, contadorO = 0, contadorU = 0;
             for (int i = 0; i < mmfrase.length(); i++) {
                 char caracter = mmfrase.charAt(i);
-                switch (caracter) {
-                    case 'a' -> contadorA++;
-                    case 'e' -> contadorE++;
-                    case 'i' -> contadorI++;
-                    case 'o' -> contadorO++;
-                    case 'u' -> contadorU++;
-                }
+                
+                 switch (caracter) {
+                     case 'a' -> contadorA++;
+                     case 'e' -> contadorE++;
+                     case 'i' -> contadorI++;
+                     case 'o' -> contadorO++;
+                     case 'u' -> contadorU++;
+                 }
             }
             int total = contadorA + contadorE + contadorI + contadorO + contadorU;
             System.out.println("tiene " + (mmfrase.length() - total) + " letras");
