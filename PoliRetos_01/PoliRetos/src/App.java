@@ -135,6 +135,7 @@ public class App {
                 System.out.println(" ");
                 
                 //Figura1
+                MMSeries.mmar2();
                 //Figura2
                 //Figura3
                 oMfFiguras.mfArrays4();
