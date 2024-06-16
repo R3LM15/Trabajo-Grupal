@@ -16,7 +16,12 @@ public class App {
                 System.out.println(" ");
 
                 int nivelTamano = lecturaNivelTamano();
+                int numA = lecturaNumeroA();
+                int numB = lecturaNumeroB();
                 String caracter1 = lecturaCaracter();
+                String frase1 = lecturaFrase();
+                String nombre = lecturaNombre();
+                String apellido = lecturaApellido();
                 String mmfrase = "ballena";
         
                 
@@ -104,7 +109,7 @@ public class App {
                 mjpRetos.mjF8();
 
 
-                MoralesFrancisco oMfFiguras = new MoralesFrancisco(nivelTamano, caracter1, "-", "_");
+                MoralesFrancisco oMfFiguras = new MoralesFrancisco(nivelTamano, numA, numB, caracter1, "-", "_", frase1, nombre, apellido);
 
                 oMfFiguras.mfF10();
                 oMfFiguras.mfF11();
@@ -125,27 +130,53 @@ public class App {
                 System.out.println(mmfrase);
                 MMSeries.mmcc1();
                 MMSeries.mmcc2();
-
                 mjpRetos.mjC03();
                 mjpRetos.mjC04();
-                
+                //CadenaC5
+                //CadenaC6
+                oMfFiguras.mfCadenaCaracter7();
+                oMfFiguras.mfCadenaCaracter8();
 
 
 
                 System.out.println(">> Arrays:");
                 System.out.println(" ");
                 mjpRetos.mjA01();
+                MMSeries.mmar2();
+                //Figura2
+                //Figura3
+                oMfFiguras.mfArrays4();
+                //Figura5
+
 
 
                 System.out.println(">> Loading:");
                 System.out.println(" ");
                 mjpRetos.mjL01();
                 mjpRetos.mjL02();
+                //Loading3
+                //Loading4
+                oMfFiguras.mfLoading5();
+                oMfFiguras.mfLoading6();
+                //Loading7
+                //Loading8
+                //Loading9
+                //Loading10
+                //Loading11
+                //Loading12
+
 
                 System.out.println(">> Recursion:");
                 System.out.println(" ");
                 mjpRetos.mjR01();
+                //Recursividad2
+                //Recursividad3
+                oMfFiguras.mfRecursion4();
+                //Recursividad5
+                //Recursividad6
         }
+
+
 
         private static int lecturaNivelTamano() {
 
@@ -181,11 +212,104 @@ public class App {
                                 sc.next();
                         }
                 } while (control || caracter.length() != 1);
-                sc.close();
+                sc.next();
                 return caracter;
         }
 
-     
+        private static String lecturaFrase() {
+
+                String frase = " ";
+                boolean control = true;
+
+                do {
+                        System.out.println("Ingrese una frase: ");
+                        try {
+                                frase = sc.next();
+                                control = false;
+                        } catch (Exception frasenopermitido) {
+                                System.out.println("LA FRASE INGRESADA NO ESTA PERMITIDA. VUELVA A INTENTARLO.");
+                                sc.next();
+                        }
+                } while (control);
+                sc.next();
+                return frase;
+        }
+        
+        private static String lecturaNombre() {
+
+                String nombre = " ";
+                boolean control = true;
+
+                do {
+                        System.out.println("Ingrese un nombre: ");
+                        try {
+                                nombre = sc.next();
+                                control = false;
+                        } catch (Exception nombrenopermitido) {
+                                System.out.println("EL NOMBRE INGRESADO NO ESTA PERMITIDO. VUELVA A INTENTARLO.");
+                                sc.next();
+                        }
+                } while (control);
+                sc.next();
+                return nombre;
+        }
+        
+        private static String lecturaApellido() {
+
+                String apellido = " ";
+                boolean control = true;
+
+                do {
+                        System.out.println("Ingrese un apellido: ");
+                        try {
+                                apellido = sc.next();
+                                control = false;
+                        } catch (Exception apellidonopermitido) {
+                                System.out.println("EL APELLIDO INGRESADO NO ESTA PERMITIDO. VUELVA A INTENTARLO.");
+                                sc.next();
+                        }
+                } while (control);
+                sc.next();
+                return apellido;
+        }
+
+        private static int lecturaNumeroA() {
+
+                int numeroA = 0;
+                boolean control = true;
+
+                do {
+                        System.out.println("Ingresa el NUMERO A para las operaciones: ");
+                        try {
+                                numeroA = sc.nextInt();
+                                control = false;
+                        } catch (Exception numeronopermitido) {
+                                System.out.println("EL NUMERO A NO ES UN NUMERO ENTERO. VUELVA A INTENTARLO.");
+                                sc.next();
+                        }
+                } while (control);
+                sc.next();
+                return numeroA;
+        }
+
+        private static int lecturaNumeroB() {
+
+                int numeroB = 0;
+                boolean control = true;
+
+                do {
+                        System.out.println("Ingresa el NUMERO B para las operaciones: ");
+                        try {
+                                numeroB = sc.nextInt();
+                                control = false;
+                        } catch (Exception numeronopermitido) {
+                                System.out.println("EL NUMERO B NO ES UN NUMERO ENTERO. VUELVA A INTENTARLO.");
+                                sc.next();
+                        }
+                } while (control || numeroB < 0);
+                sc.next();
+                return numeroB;
+        }
         
 }
 
