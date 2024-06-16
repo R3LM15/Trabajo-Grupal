@@ -392,7 +392,7 @@ public void mmld3(){
         return barra.toString() + " " + porcentaje + "%";
     }
 
-    public void mfRecursion4(){
+    public void mfRecursion2(){
         int resultado = suma(a, b);
         System.out.println("La suma de " + a + " y " + b + " es: " + resultado);
     }

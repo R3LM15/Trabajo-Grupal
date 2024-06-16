@@ -129,7 +129,6 @@ public class App {
                 mjpRetos.mjC04();
                 MMserie.mmCO5();
                 MMserie.mmCO6();
-                //CadenaC6
                 oMfFiguras.mfCadenaCaracter7();
                 oMfFiguras.mfCadenaCaracter8();
 
@@ -139,7 +138,6 @@ public class App {
                 System.out.println(" ");
                 mjpRetos.mjA01();
                 MMSeries.mmar2();
-                //Figura2
                 MMserie.mmA03();
                 oMfFiguras.mfArrays4();
                 //Figura5
