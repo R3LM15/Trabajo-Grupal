@@ -3,10 +3,14 @@ public class MolinaMateo {
     public static Scanner sc = new Scanner(System.in);
     private int mmTamano;
     private String mmfrase;
+    private int a ;
+    private int b ;
 
-    public MolinaMateo(int mmTamano , String mmfrase){
+    public MolinaMateo(int mmTamano , String mmfrase , int a , int  b){
         setmmTamano(mmTamano);
         setMmfrase(mmfrase);
+        seta(a);
+        setb(b);
     }
 
     public int getmmTamano() {
@@ -15,6 +19,22 @@ public class MolinaMateo {
 
     public void setmmTamano(int mmTamano) {
         this.mmTamano = mmTamano;
+    }
+
+    public int geta() {
+        return a;
+    }
+
+    public void seta(int a) {
+        this.a = a;
+    }
+
+    public int getb() {
+        return b;
+    }
+
+    public void setb(int b) {
+        this.b = b;
     }
 
 
@@ -373,7 +393,19 @@ public void mmld3(){
         return barra.toString() + " " + porcentaje + "%";
     }
 
+    public void mfRecursion4(){
+        int resultado = suma(a, b);
+        System.out.println("La suma de " + a + " y " + b + " es: " + resultado);
+    }
 
+    public static int suma(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        else {
+            return suma(a + 1, b - 1);
+        }
+    }
 
 
 

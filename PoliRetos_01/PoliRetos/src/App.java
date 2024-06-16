@@ -29,7 +29,7 @@ public class App {
                 System.out.println(" ");
 
 
-                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1);
+                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1,numA,numB);
 
                 MMSeries.mmSN1();
                 System.out.println(" ");
@@ -168,7 +168,7 @@ public class App {
                 System.out.println(">> Recursion:");
                 System.out.println(" ");
                 mjpRetos.mjR01();
-                //Recursividad2
+                MMSeries.mfRecursion4();
                 //Recursividad3
                 oMfFiguras.mfRecursion4();
                 //Recursividad5
