@@ -66,7 +66,7 @@ public class App {
                 System.out.println(" ");
 
 
-                MarcoMarcillo MMserie = new MarcoMarcillo(nivelTamano, caracter1, "-", "*", "/", 'h',frase1);
+                MarcoMarcillo MMserie = new MarcoMarcillo(nivelTamano, caracter1, "-", "*", "/", 'h',frase1,numA,numB);
                 
                 MMserie.mmSC1();
                 System.out.println("");
@@ -166,7 +166,7 @@ public class App {
                 System.out.println(" ");
                 mjpRetos.mjR01();
                 MMSeries.mfRecursion4();
-                //Recursividad3
+                MMserie.mmR03();
                 oMfFiguras.mfRecursion4();
                 //Recursividad5
                 //Recursividad6

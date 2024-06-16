@@ -9,10 +9,13 @@ public class MarcoMarcillo {
     private String mmCaracter4;
     private char mmLimiteLetra;
     private String mmfrase;
-
-
-
-    public MarcoMarcillo(int mmNumTermino, String mmCaracter1, String mmCaracter2, String mmCaracter3, String mmCaracter4, char mmLimiteLetra,String mmfrase){
+    private int mmNum1;
+    private int mmNum2;
+    
+    
+    
+    
+    public MarcoMarcillo(int mmNumTermino, String mmCaracter1, String mmCaracter2, String mmCaracter3, String mmCaracter4, char mmLimiteLetra,String mmfrase,int Num1,int Num2){
         setmmNumTermino(mmNumTermino);
         setMmCaracter1(mmCaracter1);
         setMmCaracter2(mmCaracter2);
@@ -20,12 +23,14 @@ public class MarcoMarcillo {
         setMmCaracter4(mmCaracter4);
         setMmLimiteLetra(mmLimiteLetra);
         setMmfrase(mmfrase);
+        setMmNum1(mmNum1);
+        setMmNum2(mmNum2);
     }
-
+    
     public int getmmNumTermino() {
         return mmNumTermino;
     }
-
+    
     public void setmmNumTermino(int mmNumTermino) {
         this.mmNumTermino = mmNumTermino;
     }
@@ -37,7 +42,7 @@ public class MarcoMarcillo {
     public void setMmCaracter1(String mmCaracter1) {
         this.mmCaracter1 = mmCaracter1;
     }
-
+    
     public String getMmCaracter2() {
         return mmCaracter2;
     }
@@ -45,7 +50,7 @@ public class MarcoMarcillo {
     public void setMmCaracter2(String mmCaracter2) {
         this.mmCaracter2 = mmCaracter2;
     }
-
+    
     public String getMmCaracter3() {
         return mmCaracter3;
     }
@@ -53,26 +58,41 @@ public class MarcoMarcillo {
     public void setMmCaracter3(String mmCaracter3) {
         this.mmCaracter3 = mmCaracter3;
     }
-
+    
     public String getMmCaracter4() {
         return mmCaracter4;
     }
-
+    
     public void setMmCaracter4(String mmCaracter4) {
         this.mmCaracter4 = mmCaracter4;
     }
-
+    
     public char getMmLimiteLetra() {
         return mmLimiteLetra;
     }
+    
+    public int getMmNum1() {
+        return mmNum1;
+    }
 
+    public void setMmNum1(int mmNum1) {
+        this.mmNum1 = mmNum1;
+    }
+
+    public int getMmNum2() {
+        return mmNum2;
+    }
+
+    public void setMmNum2(int mmNum2) {
+        this.mmNum2 = mmNum2;
+    }
     public void setMmLimiteLetra(char mmLimiteLetra) {
         this.mmLimiteLetra = mmLimiteLetra;
     }
     public String getMmfrase() {
         return mmfrase;
     }
-
+    
     public void setMmfrase(String mmfrase) {
         this.mmfrase = mmfrase;
     }
@@ -201,15 +221,16 @@ public class MarcoMarcillo {
         System.out.println("C05)      ");
         char [] fraseCaracteres;
         fraseCaracteres = mmfrase.toCharArray();
-        System.out.println();
+        System.out.print("");
         for (int i = fraseCaracteres.length - 1; i >= 0; i--) {
             if (fraseCaracteres[i] == 'a' || fraseCaracteres[i] == 'e' || fraseCaracteres[i] == 'i' || fraseCaracteres[i] == 'o' || fraseCaracteres[i] == 'u'){
                 fraseCaracteres[i] = Character.toUpperCase(fraseCaracteres[i]);
                 System.out.print(fraseCaracteres[i]+"");
             }
             else
-                System.out.println(fraseCaracteres[i]+"");
+                System.out.print(fraseCaracteres[i]+"");
         }
+        System.out.println();
     }
     public void mmCO6 (){
         System.out.println("C06)      ");
@@ -224,6 +245,7 @@ public class MarcoMarcillo {
                 System.out.print(fraseCaracteres[i]);
             }
         }
+        System.out.println();
     }
     public void mmA03(){
         System.out.println("A03)      ");
@@ -284,6 +306,7 @@ public class MarcoMarcillo {
         }
     }
     public void mmL08(){
+        System.out.println();
         System.out.println("lo8)      ");
         String ccletras = "";
         short cccontador = -1;
@@ -301,5 +324,23 @@ public class MarcoMarcillo {
         }
         System.out.print("\r" + "[" + ccletras + "] " + "100%");
     }
-} 
 
+    public void mmR03() {
+
+        System.out.print("R03)      ");
+        System.out.print("Ingrese el primer numero deseado: ");
+        int numA = App.sc.nextInt();
+        System.out.print("Ingrese el segundo numero deseado: ");
+        int numB = App.sc.nextInt();
+        int mjResultado = multiplicacion(numA, numB);
+        System.out.println("La multiplicacion de " + numA + " y de " + numB + " es: " + mjResultado);
+        System.out.println("");
+    }
+    public int multiplicacion(int a, int b) {
+        if (b == 0) {
+            return 0;
+        } else {
+            return a + multiplicacion(a, b - 1);
+        }
+    }
+} 
