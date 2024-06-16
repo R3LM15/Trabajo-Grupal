@@ -22,7 +22,6 @@ public class App {
                 String frase1 = lecturaFrase();
                 String nombre = lecturaNombre();
                 String apellido = lecturaApellido();
-                String mmfrase = "ballena";
         
                 
                 System.out.println(" ");
@@ -30,7 +29,7 @@ public class App {
                 System.out.println(" ");
 
 
-                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , mmfrase);
+                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1);
 
                 MMSeries.mmSN1();
                 System.out.println(" ");
@@ -127,7 +126,7 @@ public class App {
                 System.out.println(" ");
                 
                 
-                System.out.println(mmfrase);
+                System.out.println(frase1);
                 MMSeries.mmcc1();
                 MMSeries.mmcc2();
                 mjpRetos.mjC03();
@@ -154,8 +153,8 @@ public class App {
                 System.out.println(" ");
                 mjpRetos.mjL01();
                 mjpRetos.mjL02();
-                //Loading3
-                //Loading4
+                MMSeries.mmld3();
+                MMSeries.mmld4();
                 oMfFiguras.mfLoading5();
                 oMfFiguras.mfLoading6();
                 //Loading7

@@ -297,6 +297,81 @@ public void mmcc1() {
         }
 
 
+public void mmld3(){
+
+            final int BARRA_TAMANO = 20;
+    
+            System.out.print("Ingrese el caracter a desplazar: ");
+            String mmcaracter = "a";
+    
+            for (int i = 0; i <= BARRA_TAMANO; i++) {
+                int porcentaje = (int) (((double) i / BARRA_TAMANO) * 100);
+    
+                StringBuilder barra = new StringBuilder("[-");
+                for (int j = 0; j < i; j++) {
+                    barra.append(mmcaracter);
+                }
+                for (int j = i; j < BARRA_TAMANO; j++) {
+                    barra.append(" ");
+                }
+                barra.append("] " + porcentaje + "%");
+    
+                System.out.print("\r" + barra);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+    
+            System.out.println(); // Salto de línea al final
+    
+        }
+
+
+        public void mmld4(){
+        final int mmpromax = 100;
+        final int mmtime = 10;
+
+        for (int i = 0; i <= mmpromax; i += mmtime) {
+            String barra = construirBarra(i, mmpromax);
+            System.out.print("\r" + barra);
+
+            try {
+                Thread.sleep(300); // Espera de 300 milisegundos (0.3 segundos)
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int i = mmpromax - mmtime; i >= 0; i -= mmtime) {
+            String barra = construirBarra(i, mmpromax);
+            System.out.print("\r" + barra);
+
+            try {
+                Thread.sleep(300); // Espera de 300 milisegundos (0.3 segundos)
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static String construirBarra(int mmtime, int mmpromax) {
+        int porcentaje = (int) ((double) mmtime / mmpromax * 100);
+        int cantidadO = porcentaje / 10;
+        int cantidad0 = 10 - cantidadO;
+
+        StringBuilder barra = new StringBuilder();
+        for (int j = 0; j < cantidadO; j++) {
+            barra.append("o");
+        }
+        for (int j = 0; j < cantidad0; j++) {
+            barra.append("0");
+        }
+        barra.insert(cantidadO, "0");
+
+        return barra.toString() + " " + porcentaje + "%";
+    }
 
 
 
