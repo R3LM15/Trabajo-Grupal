@@ -66,7 +66,7 @@ public class App {
                 System.out.println(" ");
 
 
-                MarcoMarcillo MMserie = new MarcoMarcillo(nivelTamano, caracter1, "-", "*", "/", 'h');
+                MarcoMarcillo MMserie = new MarcoMarcillo(nivelTamano, caracter1, "-", "*", "/", 'h',frase1);
                 
                 MMserie.mmSC1();
                 System.out.println("");
@@ -127,7 +127,8 @@ public class App {
                 MMSeries.mmcc2();
                 mjpRetos.mjC03();
                 mjpRetos.mjC04();
-                //CadenaC5
+                MMserie.mmCO5();
+                MMserie.mmCO6();
                 //CadenaC6
                 oMfFiguras.mfCadenaCaracter7();
                 oMfFiguras.mfCadenaCaracter8();
@@ -139,7 +140,7 @@ public class App {
                 mjpRetos.mjA01();
                 MMSeries.mmar2();
                 //Figura2
-                //Figura3
+                MMserie.mmA03();
                 oMfFiguras.mfArrays4();
                 //Figura5
 
@@ -153,8 +154,8 @@ public class App {
                 MMSeries.mmld4();
                 oMfFiguras.mfLoading5();
                 oMfFiguras.mfLoading6();
-                //Loading7
-                //Loading8
+                MMserie.mmL07();
+                MMserie.mmL08();
                 //Loading9
                 //Loading10
                 //Loading11

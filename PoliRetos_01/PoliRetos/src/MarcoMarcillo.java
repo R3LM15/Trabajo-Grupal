@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 public class MarcoMarcillo {
 
     private int mmNumTermino;
@@ -6,14 +8,18 @@ public class MarcoMarcillo {
     private String mmCaracter3;
     private String mmCaracter4;
     private char mmLimiteLetra;
+    private String mmfrase;
 
-    public MarcoMarcillo(int mmNumTermino, String mmCaracter1, String mmCaracter2, String mmCaracter3, String mmCaracter4, char mmLimiteLetra){
+
+
+    public MarcoMarcillo(int mmNumTermino, String mmCaracter1, String mmCaracter2, String mmCaracter3, String mmCaracter4, char mmLimiteLetra,String mmfrase){
         setmmNumTermino(mmNumTermino);
         setMmCaracter1(mmCaracter1);
         setMmCaracter2(mmCaracter2);
         setMmCaracter3(mmCaracter3);
         setMmCaracter4(mmCaracter4);
         setMmLimiteLetra(mmLimiteLetra);
+        setMmfrase(mmfrase);
     }
 
     public int getmmNumTermino() {
@@ -62,6 +68,13 @@ public class MarcoMarcillo {
 
     public void setMmLimiteLetra(char mmLimiteLetra) {
         this.mmLimiteLetra = mmLimiteLetra;
+    }
+    public String getMmfrase() {
+        return mmfrase;
+    }
+
+    public void setMmfrase(String mmfrase) {
+        this.mmfrase = mmfrase;
     }
     
     public void mmSC1(){
@@ -182,6 +195,111 @@ public class MarcoMarcillo {
             b = c;
             c = x;
         }
+    }
+    //Poliretos2
+    public void mmCO5 (){
+        System.out.println("C05)      ");
+        char [] fraseCaracteres;
+        fraseCaracteres = mmfrase.toCharArray();
+        System.out.println();
+        for (int i = fraseCaracteres.length - 1; i >= 0; i--) {
+            if (fraseCaracteres[i] == 'a' || fraseCaracteres[i] == 'e' || fraseCaracteres[i] == 'i' || fraseCaracteres[i] == 'o' || fraseCaracteres[i] == 'u'){
+                fraseCaracteres[i] = Character.toUpperCase(fraseCaracteres[i]);
+                System.out.print(fraseCaracteres[i]+"");
+            }
+            else
+                System.out.println(fraseCaracteres[i]+"");
+        }
+    }
+    public void mmCO6 (){
+        System.out.println("C06)      ");
+        char [] fraseCaracteres;
+        fraseCaracteres = mmfrase.toCharArray();
+        System.out.print("");
+        for (int i = fraseCaracteres.length - 1; i >= 0; i--) {
+            if (fraseCaracteres[i] == 'a' || fraseCaracteres[i] == 'e' || fraseCaracteres[i] == 'i' || fraseCaracteres[i] == 'o' || fraseCaracteres[i] == 'u')
+                System.out.print(fraseCaracteres[i]);
+            else {
+                fraseCaracteres[i] = Character.toUpperCase(fraseCaracteres[i]);
+                System.out.print(fraseCaracteres[i]);
+            }
+        }
+    }
+    public void mmA03(){
+        System.out.println("A03)      ");
+        int guion = 45;
+        for (int i=10; i>0; i--){
+            if(i==10){
+                System.out.println(i+ " |            O");
+            }
+            if(i==8){
+                System.out.println(i+ "  |         C");
+            }
+            if(i==6){
+                System.out.println(i+ "  |      R");
+            }
+            if(i==4){
+                System.out.println(i+ "  |   A");
+            }
+            if(i==2){
+                System.out.println(i+ "  |M");
+            }
+            if(i % 2 !=0){
+                if(i>9){
+                    System.out.println(i + " |");
+                }
+                else{
+                    System.out.println(i + "  |");
+                }
+            }
+            
+        }
+        System.out.print("   ");
+        for(int j=0; j<18; j++){
+            System.out.print((char)guion);
+        }
+        System.out.println();
+    }
+
+    public void mmL07() {
+        System.out.println("lo7)      ");
+        int retraso = 100; 
+        String[] puntero = {"\\", "|", "/", "-"};
+        System.out.println();
+        for (int i = 0; i <= 100; i++) {
+            int numIguales = i / 5;
+            int numEspacios = 20 - numIguales;
+
+            String barra = String.join("", Collections.nCopies(numIguales, "=")) +
+                puntero[i % puntero.length] +
+                String.join("", Collections.nCopies(numEspacios, " "));
+
+            System.out.print("\r[" + barra + "] " + i + "%");
+
+            try {
+                Thread.sleep(retraso); 
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void mmL08(){
+        System.out.println("lo8)      ");
+        String ccletras = "";
+        short cccontador = -1;
+        int ccpatron = 100 / mmfrase.length();
+        for (int i = ccpatron; i < ccpatron * mmfrase.length() + 1; i += ccpatron) {
+            cccontador++;
+            ccletras += mmfrase.charAt(cccontador);
+            System.out.print(
+                    "\r" + "[" + ccletras + " ".repeat(mmfrase.length() - 1 - cccontador) + "] " + i + "%");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.print("\r" + "[" + ccletras + "] " + "100%");
     }
 } 
 
