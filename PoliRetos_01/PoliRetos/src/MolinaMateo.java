@@ -321,7 +321,6 @@ public void mmld3(){
 
             final int BARRA_TAMANO = 20;
     
-            System.out.print("Ingrese el caracter a desplazar: ");
             String mmcaracter = "a";
     
             for (int i = 0; i <= BARRA_TAMANO; i++) {
