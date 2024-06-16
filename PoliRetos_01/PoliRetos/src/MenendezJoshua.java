@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class MenendezJoshua {
     
     private int mjLeertamanio;
@@ -219,12 +217,11 @@ public class MenendezJoshua {
 
     public void mjC03() {
 
-        Scanner sc = new Scanner(System.in);
         System.out.print("C03)      ");
         System.out.print("Ingresa una frase: ");
-        String mjFrase = sc.nextLine();
+        String mjFrase = App.sc.next();
         System.out.print("Ingresa una vocal: ");
-        String mjVocal = sc.next();
+        String mjVocal = App.sc.next();
 
         String fraseSinVocal = mjFrase.replaceAll(mjVocal, " ");
         System.out.println("La palabra sin " + mjVocal + " :" + fraseSinVocal);
@@ -235,12 +232,11 @@ public class MenendezJoshua {
 
     public void mjC04() {
 
-        Scanner sc = new Scanner(System.in);
         System.out.print("C04)      ");
         System.out.print("Ingresa una frase: ");
-        String mjFrase = sc.nextLine();
+        String mjFrase = App.sc.next();
         System.out.print("Ingresa una letra: ");
-        String mjLetra = sc.next();
+        String mjLetra = App.sc.next();
 
         String mjSinLetra = mjFrase.replaceAll(mjLetra, " ");
         System.out.println("La palabra sin  " + mjLetra + " :" + mjSinLetra);
@@ -253,8 +249,6 @@ public class MenendezJoshua {
 
     public void mjA01() {
 
-        Scanner sc = new Scanner(System.in);
-
         String[] mjNombres = { "Joshua", "Daniel", "Menendez", "Farias" };
 
         int[] mjPorcent = new int[mjNombres.length];
@@ -263,7 +257,7 @@ public class MenendezJoshua {
         System.out.println("Ingresa el porcentaje de carga para cada nombre:");
         for (int i = 0; i < mjNombres.length; i++) {
             System.out.print("Porcentaje para " + mjNombres[i] + ": ");
-            mjPorcent[i] = sc.nextInt();
+            mjPorcent[i] = App.sc.nextInt();
         }
 
         for (int i = 0; i < mjNombres.length; i++) {
@@ -328,11 +322,10 @@ public class MenendezJoshua {
 
 
     public void mjR01() {
-        Scanner sc = new Scanner(System.in);
 
         System.out.print("R01)      ");
         System.out.print("Ingrese el numero deseado: ");
-        int mjNumero = sc.nextInt();
+        int mjNumero = App.sc.nextInt();
 
         int mjResultado = factorial(mjNumero);
         System.out.println("El factorial de " + mjNumero + " es: " + mjResultado);

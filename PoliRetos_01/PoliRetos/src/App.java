@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class App {
         public static Scanner sc = new Scanner(System.in);
-
+        public static MoralesFrancisco oMfFiguras;
+        public static MenendezJoshua mjpRetos;
         public static void main(String[] args) throws Exception {
 
                 System.out.println("      GRUPO #03      ");
@@ -22,15 +23,14 @@ public class App {
                 String frase1 = lecturaFrase();
                 String nombre = lecturaNombre();
                 String apellido = lecturaApellido();
-                String mmfrase = "ballena";
-        
+
                 
                 System.out.println(" ");
                 System.out.println(">> Series numéricas");
                 System.out.println(" ");
 
 
-                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , mmfrase);
+                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1);
 
                 MMSeries.mmSN1();
                 System.out.println(" ");
@@ -60,10 +60,6 @@ public class App {
                 System.out.println(" ");
 
                 MMSeries.mmSN10();
-                System.out.println(" ");
-
-
-                System.out.println(">> Figuras");
                 System.out.println(" ");
 
 
@@ -127,7 +123,7 @@ public class App {
                 System.out.println(" ");
                 
                 
-                System.out.println(mmfrase);
+                System.out.println(frase1);
                 MMSeries.mmcc1();
                 MMSeries.mmcc2();
                 mjpRetos.mjC03();
@@ -310,9 +306,4 @@ public class App {
                 sc.next();
                 return numeroB;
         }
-        
 }
-
-       
-
-
