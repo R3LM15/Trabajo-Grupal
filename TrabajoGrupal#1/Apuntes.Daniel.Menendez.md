@@ -254,7 +254,7 @@ _20-05-2024_
 1. Diagrama de clase de uso
 2. coonvertir en UML
 
-# CLASE 00
+# CLASE 09
 
 _20-05-2024_
 
@@ -269,3 +269,85 @@ _20-05-2024_
 ### Sobrecarga
 
 Particularidad de poder pasar varios parametros
+
+
+# CLASE 10
+- **las variables:**
+se pueden escribir con letras, iniciar en minusculas, no pueden contener espacios en blanco, puede tener un _ (guion bajo), puede tener numeros incluso singo de dolar, pueden ser datos primitivos o no primitivos.
+
+- **String**
+obtener un caracter, longitud, camparacion.
+
+- **Scanner**
+leer un valor, entradas secuenciales, libreria, ayuda a escanear los datos que se ingresan en un flujo de informacion como con el teclado, los archivos, etc.
+
+- **Arrays**
+se tienen varios modos, uno *EOF* se puede trabajar e varias formas.
+
+
+# CLASE 11
+
+## Interface
+Una interfaz es una abstracción de los elementos que define un conjunto de métodos que deben implementarse en las clases que la utilizan.
+
+## UML
+El lenguaje de modelado unificado (UML) se utiliza para bosquejar datos y crear diagramas de clases, que pueden ser:
+
+***Estáticos:*** Incluyen diagramas de clases y objetos.
+
+***Dinámicos:*** Incluyen diagramas de métodos y comportamientos.
+En el proceso, es fundamental identificar todas las entidades involucradas y realizar las pruebas necesarias.
+
+Ejemplo:
+Actor: Bibliotecario, con sus funciones hacia el banco.
+Otro Actor: Estudiante, con sus funciones y variables correspondientes.
+
+## Herencia
+En la programación orientada a objetos, una clase puede heredar atributos y métodos de otra clase, facilitando la especialización entre actores y casos de uso.
+
+***Especialización***: Definición detallada de actores y casos de uso.
+
+***Extends***: Permite que una clase herede de múltiples clases.
+
+
+***Include***: Se utiliza para incluir funcionalidades; suele ser más complicado y generalmente se usa solo una vez, aunque puede incluirse más de una vez en casos específicos.
+Búsqueda
+
+
+La búsqueda en UML implica identificar relaciones y dependencias entre las clases y actores del sistema, asegurando que todas las interacciones estén claramente definidas y estructuradas.
+
+
+# CLASE 12
+
+***Scanner estatico:*** no puede clonarse, no se repite.
+sirve para declarar que solo se tiene un recurso o aparato (Ej.- el teclado) 
+
+***Scanner dinamico:*** se puede clonar, se puede repetir.
+
+
+
+## comandos de escape
+***\\ r***: borra y vuelve a imprimir, por ello aparece en la misma posicion.
+
+
+***\\ n***: salto de linea
+
+***refactorizar***: reorganizar el codigo para que sea mas legible y eficiente. No se cambia la funcionalidad, solo se reorganiza.
+
+
+# CLASE 13
+***asociacion***: relacion entre dos clases, donde dice que jamas va a existir uno sin el otro, ej: un propietario puede tener una mascota, pero una mascota no puede estar sin propietario.
+
+***Interface/Realizacion/Implementacion*** : son lo mismo los tres, no se instancian, no es su funcion heredar.
+
+***Herencia*** : una clase hija hereda las caracteristicas de una clase padre.
+
+***Composicion***: una clase puede tener varias instancias de otra clase, ej: un coche tiene varias ruedas.
+
+***Agregacion***: una clase puede tener varias instancias de otra clase, pero no necesariamente, ej: un coche puede tener varias ruedas, pero no necesariamente.
+
+***Dependencia***: una clase puede utilizar otra clase, pero no es necesario, ej: un coche puede utilizar un GPS, pero no es necesario.
+
+***interfaz(Inombre)***: acciones comunes entre los entes, Ej: Icomportamientonatural, todos los metodos en la interfaz son publicos, por defecto.
+
+
