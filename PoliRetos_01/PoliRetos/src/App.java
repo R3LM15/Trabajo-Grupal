@@ -23,14 +23,13 @@ public class App {
                 String frase1 = lecturaFrase();
                 String nombre = lecturaNombre();
                 String apellido = lecturaApellido();
-
                 
                 System.out.println(" ");
                 System.out.println(">> Series numéricas");
                 System.out.println(" ");
 
 
-                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1);
+                MolinaMateo MMSeries = new MolinaMateo(nivelTamano , frase1,numA,numB);
 
                 MMSeries.mmSN1();
                 System.out.println(" ");
@@ -150,8 +149,8 @@ public class App {
                 System.out.println(" ");
                 mjpRetos.mjL01();
                 mjpRetos.mjL02();
-                //Loading3
-                //Loading4
+                MMSeries.mmld3();
+                MMSeries.mmld4();
                 oMfFiguras.mfLoading5();
                 oMfFiguras.mfLoading6();
                 //Loading7
@@ -165,7 +164,7 @@ public class App {
                 System.out.println(">> Recursion:");
                 System.out.println(" ");
                 mjpRetos.mjR01();
-                //Recursividad2
+                MMSeries.mfRecursion4();
                 //Recursividad3
                 oMfFiguras.mfRecursion4();
                 //Recursividad5

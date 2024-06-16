@@ -3,10 +3,14 @@ public class MolinaMateo {
     public static Scanner sc = new Scanner(System.in);
     private int mmTamano;
     private String mmfrase;
+    private int a ;
+    private int b ;
 
-    public MolinaMateo(int mmTamano , String mmfrase){
+    public MolinaMateo(int mmTamano , String mmfrase , int a , int  b){
         setmmTamano(mmTamano);
         setMmfrase(mmfrase);
+        seta(a);
+        setb(b);
     }
 
     public int getmmTamano() {
@@ -15,6 +19,22 @@ public class MolinaMateo {
 
     public void setmmTamano(int mmTamano) {
         this.mmTamano = mmTamano;
+    }
+
+    public int geta() {
+        return a;
+    }
+
+    public void seta(int a) {
+        this.a = a;
+    }
+
+    public int getb() {
+        return b;
+    }
+
+    public void setb(int b) {
+        this.b = b;
     }
 
 
@@ -297,8 +317,94 @@ public void mmcc1() {
         }
 
 
+public void mmld3(){
+
+            final int BARRA_TAMANO = 20;
+    
+            String mmcaracter = "a";
+    
+            for (int i = 0; i <= BARRA_TAMANO; i++) {
+                int porcentaje = (int) (((double) i / BARRA_TAMANO) * 100);
+    
+                StringBuilder barra = new StringBuilder("[-");
+                for (int j = 0; j < i; j++) {
+                    barra.append(mmcaracter);
+                }
+                for (int j = i; j < BARRA_TAMANO; j++) {
+                    barra.append(" ");
+                }
+                barra.append("] " + porcentaje + "%");
+    
+                System.out.print("\r" + barra);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+    
+            System.out.println(); // Salto de línea al final
+    
+        }
 
 
+        public void mmld4(){
+        final int mmpromax = 100;
+        final int mmtime = 10;
+
+        for (int i = 0; i <= mmpromax; i += mmtime) {
+            String barra = construirBarra(i, mmpromax);
+            System.out.print("\r" + barra);
+
+            try {
+                Thread.sleep(300); // Espera de 300 milisegundos (0.3 segundos)
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int i = mmpromax - mmtime; i >= 0; i -= mmtime) {
+            String barra = construirBarra(i, mmpromax);
+            System.out.print("\r" + barra);
+
+            try {
+                Thread.sleep(300); // Espera de 300 milisegundos (0.3 segundos)
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static String construirBarra(int mmtime, int mmpromax) {
+        int porcentaje = (int) ((double) mmtime / mmpromax * 100);
+        int cantidadO = porcentaje / 10;
+        int cantidad0 = 10 - cantidadO;
+
+        StringBuilder barra = new StringBuilder();
+        for (int j = 0; j < cantidadO; j++) {
+            barra.append("o");
+        }
+        for (int j = 0; j < cantidad0; j++) {
+            barra.append("0");
+        }
+        barra.insert(cantidadO, "0");
+
+        return barra.toString() + " " + porcentaje + "%";
+    }
+
+    public void mfRecursion4(){
+        int resultado = suma(a, b);
+        System.out.println("La suma de " + a + " y " + b + " es: " + resultado);
+    }
+
+    public static int suma(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        else {
+            return suma(a + 1, b - 1);
+        }
+    }
 
 
 
