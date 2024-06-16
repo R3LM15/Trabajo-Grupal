@@ -163,7 +163,7 @@ public class App {
                 System.out.println(">> Recursion:");
                 System.out.println(" ");
                 mjpRetos.mjR01();
-                MMSeries.mfRecursion4();
+                MMSeries.mfRecursion2();
                 MMserie.mmR03();
                 oMfFiguras.mfRecursion4();
                 //Recursividad5
