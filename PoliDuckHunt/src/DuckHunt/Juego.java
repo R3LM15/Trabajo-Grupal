@@ -22,9 +22,9 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private JFrame frame;
     private long startTime;
     private int patosCazados;
-    static int nivel = 1;
-    private int n = 1;
-    private int patosObjetivo = n;
+    public static int nivel = 1;
+    private int cantPatos = 1;
+    private int patosObjetivo = cantPatos;
     private CardLayout cardLayout;
     private JPanel mainPanel;
 
@@ -92,7 +92,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
         JOptionPane.showMessageDialog(frame, "¡Victoria! Has superado el nivel " + nivel + " en " + elapsedTime + " segundos.");
         nivel++;
-        patosObjetivo = nivel * n;
+        patosObjetivo = nivel * cantPatos;
 
 
        if (nivel == 5) {
@@ -101,7 +101,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
        if (nivel == 6) {
         JOptionPane.showMessageDialog(frame, "Felicitaciones! ");
         nivel=1;
-        patosObjetivo = nivel * n;
+        patosObjetivo = nivel * cantPatos;
        }
 
 
