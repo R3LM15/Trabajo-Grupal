@@ -1,7 +1,5 @@
 package DuckHunt;
 
-import javax.swing.JPanel;
-import javax.swing.JOptionPane;
 import java.awt.CardLayout;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -10,10 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.Timer;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class Juego extends JPanel implements ActionListener, MouseListener {
     private List<Pato> patos;
@@ -22,9 +22,14 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private JFrame frame;
     private long startTime;
     private int patosCazados;
-    private final int patosObjetivo = 10;
+    static int nivel = 1;
+    private int n = 1;
+    private int patosObjetivo = n;
     private CardLayout cardLayout;
     private JPanel mainPanel;
+
+    
+  
 
     public Juego(JFrame frame, CardLayout cardLayout, JPanel mainPanel) {
         this.frame = frame;
@@ -42,6 +47,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
 
     public void startGame() {
         this.startTime = System.currentTimeMillis();
+        JOptionPane.showMessageDialog(frame, "Nivel "+ nivel + " [Objetivo " + (patosObjetivo) + " patos]");
         this.timer.start();
     }
 
@@ -81,12 +87,27 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         }
     }
 
-    private void showVictoryMessage() {
+  
+   private void showVictoryMessage() {
         long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
-        JOptionPane.showMessageDialog(frame, "¡Victoria! Has cazado todos los patos en " + elapsedTime + " segundos.");
+        JOptionPane.showMessageDialog(frame, "¡Victoria! Has superado el nivel " + nivel + " en " + elapsedTime + " segundos.");
+        nivel++;
+        patosObjetivo = nivel * n;
+
+
+       if (nivel == 5) {
+        JOptionPane.showMessageDialog(frame, "NIVEL FINAL! ");
+       }
+       if (nivel == 6) {
+        JOptionPane.showMessageDialog(frame, "Felicitaciones! ");
+        nivel=1;
+        patosObjetivo = nivel * n;
+       }
+
+
         resetGame();
-        cardLayout.show(mainPanel, "Start");
     }
+   
 
     private void resetGame() {
         patosCazados = 0;
@@ -95,6 +116,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
             patos.add(new Pato());
         }
         repaint();
+        startGame();
     }
 
     @Override
@@ -105,4 +127,17 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     public void mouseEntered(MouseEvent e) {}
     @Override
     public void mouseExited(MouseEvent e) {}
+
+
+
+    private int variable;
+
+    public Juego(int nivel) {
+        this.nivel = nivel;
+
+    }
+
+    public void imprimirVariable() {
+        System.out.println("Variable en ClaseA: " + variable);
+    }
 }

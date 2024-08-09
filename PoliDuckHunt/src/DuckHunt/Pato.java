@@ -17,12 +17,15 @@ public class Pato {
     private int frameDelayCounter;
     private boolean falling = false;
     private boolean cazado = false;
+    private int velocidad = Juego.nivel * 2;
+
 
     public Pato() {
+
         x = (int) (Math.random() * 800);
         y = (int) (Math.random() * 600);
-        speedX = (int) (Math.random() * 10 - 5);
-        speedY = (int) (Math.random() * 10 - 5);
+        speedX = (int) (Math.random() * 10 - velocidad);
+        speedY = (int) (Math.random() * 10 - velocidad);
 
         try {
             duckImage = ImageIO.read(new File("imagenes/patoimg.png"));
