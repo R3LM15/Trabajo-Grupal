@@ -23,7 +23,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private long startTime;
     private int patosCazados;
     public static int nivel = 1;
-    private int cantPatos = 1;
+    private int cantPatos = 5;
     private int patosObjetivo = cantPatos;
     private CardLayout cardLayout;
     private JPanel mainPanel;
