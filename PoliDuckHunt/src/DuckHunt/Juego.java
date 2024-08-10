@@ -76,6 +76,8 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         if (elapsedTime >= LIMITE_TIEMPO) {
             timer.stop(); 
             JOptionPane.showMessageDialog(frame, "LIMITE DE TIEMPO SUPERADO!! ");
+            nivel=1;
+            patosObjetivo = nivel * cantPatos;
             resetGame();
         }
         

@@ -5,6 +5,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+ 
+
 
 public class Pato {
     private int x, y, speedX, speedY;
@@ -19,6 +26,7 @@ public class Pato {
     private boolean cazado = false;
     private int velocidad = Juego.nivel * 2;
 
+private Clip cazadoSoundClip;
 
     public Pato() {
 
@@ -30,7 +38,11 @@ public class Pato {
         try {
             duckImage = ImageIO.read(new File("imagenes/patoimg.png"));
             cazadoImage = ImageIO.read(new File("imagenes/patocazado.png"));
-        } catch (IOException e) {
+
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/shotgun.wav"));
+            cazadoSoundClip = AudioSystem.getClip();
+            cazadoSoundClip.open(audioInputStream);
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
 
@@ -112,11 +124,19 @@ public void update() {
     public void fall() {
         falling = true;
         cazado = true;
+        playCazadoSound(); // Reproduce el sonido cuando el pato es cazado
         speedX = 0;
         speedY = 0;
     }
 
     public boolean isFalling() {
         return falling;
+    }
+
+    private void playCazadoSound() {
+        if (cazadoSoundClip != null) {
+            cazadoSoundClip.setFramePosition(0); 
+            cazadoSoundClip.start(); 
+        }
     }
 }
