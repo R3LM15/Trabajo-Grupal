@@ -48,32 +48,31 @@ public class Pato {
     }
     public void update() {
         if (!falling) {
-            // Mueve el pato en la dirección actual
+            
             x += speedX;
             y += speedY;
     
-            // Maneja el desbordamiento de los bordes de la pantalla
+            
             if (x < -frames[currentFrame].getWidth()) {
-                x = 800; // Aparece en el borde derecho
+                x = 800; 
             } else if (x > 800) {
-                x = -frames[currentFrame].getWidth(); // Aparece en el borde izquierdo
+                x = -frames[currentFrame].getWidth(); 
             }
     
             if (y < -frames[currentFrame].getHeight()) {
-                y = 600; // Aparece en el borde inferior
+                y = 600; 
             } else if (y > 600) {
-                y = -frames[currentFrame].getHeight(); // Aparece en el borde superior
+                y = -frames[currentFrame].getHeight(); 
             }
-    
-            // Actualiza el frame de animación
+
             frameDelayCounter++;
             if (frameDelayCounter >= frameDelay) {
                 currentFrame = (currentFrame + 1) % frameCount;
                 frameDelayCounter = 0;
             }
         } else {
-            // Mueve el pato en la caída
-            y += 5; // Velocidad de caída
+            
+            y += 5; 
         }
     }
     
