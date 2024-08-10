@@ -1,6 +1,8 @@
 package DuckHunt;
 
+
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -27,7 +29,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private int patosObjetivo = cantPatos;
     private CardLayout cardLayout;
     private JPanel mainPanel;
-
+    private static final int LIMITE_TIEMPO = 30;
     
   
 
@@ -43,6 +45,8 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         this.timer = new Timer(1000 / 60, this);
         this.background = Toolkit.getDefaultToolkit().getImage("imagenes/fondo.png");
         addMouseListener(this);
+
+       
     }
 
     public void startGame() {
@@ -50,6 +54,8 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         JOptionPane.showMessageDialog(frame, "Nivel "+ nivel + " [Objetivo " + (patosObjetivo) + " patos]");
         this.timer.start();
     }
+
+  
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -59,8 +65,20 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
             duck.draw(g);
         }
         long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
+        
+        g.setColor(Color.BLACK);
         g.drawString("Tiempo: " + elapsedTime + "s", 10, 20);
         g.drawString("Patos cazados: " + patosCazados, 10, 40);
+
+
+
+
+        if (elapsedTime >= LIMITE_TIEMPO) {
+            timer.stop(); 
+            JOptionPane.showMessageDialog(frame, "LIMITE DE TIEMPO SUPERADO!! ");
+            resetGame();
+        }
+        
     }
 
     @Override
@@ -129,15 +147,4 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent e) {}
 
 
-
-    private int variable;
-
-    public Juego(int nivel) {
-        this.nivel = nivel;
-
-    }
-
-    public void imprimirVariable() {
-        System.out.println("Variable en ClaseA: " + variable);
-    }
 }

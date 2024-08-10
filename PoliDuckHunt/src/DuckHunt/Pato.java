@@ -46,23 +46,55 @@ public class Pato {
         frameDelay = 5; // Cambia el frame cada 5 actualizaciones
         frameDelayCounter = 0;
     }
-
     public void update() {
         if (!falling) {
+            // Mueve el pato en la dirección actual
             x += speedX;
             y += speedY;
-            if (x < 0 || x > 800) speedX = -speedX;
-            if (y < 0 || y > 600) speedY = -speedY;
-
+    
+            // Maneja el desbordamiento de los bordes de la pantalla
+            if (x < -frames[currentFrame].getWidth()) {
+                x = 800; // Aparece en el borde derecho
+            } else if (x > 800) {
+                x = -frames[currentFrame].getWidth(); // Aparece en el borde izquierdo
+            }
+    
+            if (y < -frames[currentFrame].getHeight()) {
+                y = 600; // Aparece en el borde inferior
+            } else if (y > 600) {
+                y = -frames[currentFrame].getHeight(); // Aparece en el borde superior
+            }
+    
+            // Actualiza el frame de animación
             frameDelayCounter++;
             if (frameDelayCounter >= frameDelay) {
                 currentFrame = (currentFrame + 1) % frameCount;
                 frameDelayCounter = 0;
             }
         } else {
+            // Mueve el pato en la caída
             y += 5; // Velocidad de caída
         }
     }
+    
+/* 
+public void update() {
+    if (!falling) {
+        x += speedX;
+        y += speedY;
+        if (x < 0 || x > 800) speedX = -speedX;
+        if (y < 0 || y > 600) speedY = -speedY;
+        
+        frameDelayCounter++;
+        if (frameDelayCounter >= frameDelay) {
+            currentFrame = (currentFrame + 1) % frameCount;
+            frameDelayCounter = 0;
+        }
+    } else {
+        y += 5; // Velocidad de caída
+    }
+}
+*/
 
     public void draw(Graphics g) {
         if (cazado) {

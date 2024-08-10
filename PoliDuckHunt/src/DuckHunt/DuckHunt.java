@@ -1,13 +1,13 @@
 package DuckHunt;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.CardLayout;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class DuckHunt {
     private static JFrame frame;
@@ -36,10 +36,13 @@ public class DuckHunt {
 
         Menu menu = new Menu(cardLayout, mainPanel);
         Juego juego = new Juego(frame, cardLayout, mainPanel);
+        //Salir salir = new salir(frame, cardLayout, mainPanel);
+
 
         mainPanel.add(startPanel, "Start");
         mainPanel.add(menu, "Menu");
         mainPanel.add(juego, "Juego");
+        //mainPanel.add(salir, "Salir");
 
         frame.add(mainPanel);
         frame.setSize(500, 400);
