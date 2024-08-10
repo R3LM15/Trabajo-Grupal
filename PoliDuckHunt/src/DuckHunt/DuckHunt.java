@@ -13,11 +13,22 @@ public class DuckHunt {
     private static JFrame frame;
     private static CardLayout cardLayout;
     private static JPanel mainPanel;
+    
+
 
     public static void main(String[] args) {
         frame = new JFrame("Duck Hunt");
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
+        int ancho = 500;
+        int alto = 500;
+
+        if (ancho == 500 && alto == 400){
+        } else {
+            System.out.println("Ancho y alto no aceptados para la correcta ejecucion del juego, el ancho debe ser de 500 pixeles y el alto de 400 pixeles");
+            System.exit(0);
+            
+        }
 
         JPanel startPanel = new JPanel() {
             @Override
@@ -45,7 +56,7 @@ public class DuckHunt {
         //mainPanel.add(salir, "Salir");
 
         frame.add(mainPanel);
-        frame.setSize(500, 400);
+        frame.setSize(ancho, alto);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setVisible(true);
