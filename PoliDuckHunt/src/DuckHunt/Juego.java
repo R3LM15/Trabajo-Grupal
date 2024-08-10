@@ -78,7 +78,7 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         JOptionPane.showMessageDialog(frame, "Nivel "+ nivel + " [Objetivo " + (patosObjetivo) + " patos]");
         this.timer.start();
     }
-
+    
   
 
     @Override
