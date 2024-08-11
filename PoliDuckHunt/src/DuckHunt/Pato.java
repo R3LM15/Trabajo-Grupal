@@ -5,6 +5,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+ 
+
 
 public class Pato {
     private int x, y, speedX, speedY;
@@ -19,6 +26,10 @@ public class Pato {
     private boolean cazado = false;
     private int velocidad = Juego.nivel * 2;
 
+    //Sonidos
+        private Clip cazadoSoundClip;
+        private Clip caidaSoundClip;
+
 
     public Pato() {
 
@@ -30,7 +41,17 @@ public class Pato {
         try {
             duckImage = ImageIO.read(new File("imagenes/patoimg.png"));
             cazadoImage = ImageIO.read(new File("imagenes/patocazado.png"));
-        } catch (IOException e) {
+
+            //escopeta
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/shotgun.wav"));
+            cazadoSoundClip = AudioSystem.getClip();
+            cazadoSoundClip.open(audioInputStream);
+            //caida
+            AudioInputStream caidaAudioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/Voicy_Duck-Flapping.wav"));
+            caidaSoundClip = AudioSystem.getClip();
+            caidaSoundClip.open(caidaAudioInputStream);
+
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
 
@@ -46,13 +67,24 @@ public class Pato {
         frameDelay = 5; // Cambia el frame cada 5 actualizaciones
         frameDelayCounter = 0;
     }
-
     public void update() {
         if (!falling) {
+            
             x += speedX;
             y += speedY;
-            if (x < 0 || x > 800) speedX = -speedX;
-            if (y < 0 || y > 600) speedY = -speedY;
+    
+            
+            if (x < -frames[currentFrame].getWidth()) {
+                x = 800; 
+            } else if (x > 800) {
+                x = -frames[currentFrame].getWidth(); 
+            }
+    
+            if (y < -frames[currentFrame].getHeight()) {
+                y = 600; 
+            } else if (y > 600) {
+                y = -frames[currentFrame].getHeight(); 
+            }
 
             frameDelayCounter++;
             if (frameDelayCounter >= frameDelay) {
@@ -60,9 +92,29 @@ public class Pato {
                 frameDelayCounter = 0;
             }
         } else {
-            y += 5; // Velocidad de caída
+            
+            y += 5; 
         }
     }
+    
+/* 
+public void update() {
+    if (!falling) {
+        x += speedX;
+        y += speedY;
+        if (x < 0 || x > 800) speedX = -speedX;
+        if (y < 0 || y > 600) speedY = -speedY;
+        
+        frameDelayCounter++;
+        if (frameDelayCounter >= frameDelay) {
+            currentFrame = (currentFrame + 1) % frameCount;
+            frameDelayCounter = 0;
+        }
+    } else {
+        y += 5; // Velocidad de caída
+    }
+}
+*/
 
     public void draw(Graphics g) {
         if (cazado) {
@@ -79,6 +131,8 @@ public class Pato {
     }
 
     public void fall() {
+        playCazadoSound(); 
+        playCaidaSound(); 
         falling = true;
         cazado = true;
         speedX = 0;
@@ -87,5 +141,19 @@ public class Pato {
 
     public boolean isFalling() {
         return falling;
+    }
+
+    private void playCazadoSound() {
+        if (cazadoSoundClip != null) {
+            cazadoSoundClip.setFramePosition(0); 
+            cazadoSoundClip.start(); 
+        }
+    }
+
+    private void playCaidaSound() {
+        if (caidaSoundClip != null) {
+            caidaSoundClip.setFramePosition(0); 
+            caidaSoundClip.start(); 
+        }
     }
 }

@@ -1,6 +1,8 @@
 package DuckHunt;
 
+
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -8,8 +10,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -27,9 +36,12 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private int patosObjetivo = cantPatos;
     private CardLayout cardLayout;
     private JPanel mainPanel;
-
+    private static final int LIMITE_TIEMPO = 30;
     
-  
+     private Clip limitime;
+     private Clip nivelpass;
+
+
 
     public Juego(JFrame frame, CardLayout cardLayout, JPanel mainPanel) {
         this.frame = frame;
@@ -43,6 +55,22 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         this.timer = new Timer(1000 / 60, this);
         this.background = Toolkit.getDefaultToolkit().getImage("imagenes/fondo.png");
         addMouseListener(this);
+
+         try {
+            AudioInputStream caidaAudioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/Voicy_Game-Over.wav"));
+            limitime = AudioSystem.getClip();
+            limitime.open(caidaAudioInputStream);
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            AudioInputStream caidaAudioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/Voicy_Game-Start-Sound.wav"));
+            nivelpass = AudioSystem.getClip();
+            nivelpass.open(caidaAudioInputStream);
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
     }
 
     public void startGame() {
@@ -50,6 +78,8 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         JOptionPane.showMessageDialog(frame, "Nivel "+ nivel + " [Objetivo " + (patosObjetivo) + " patos]");
         this.timer.start();
     }
+    
+  
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -59,8 +89,29 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
             duck.draw(g);
         }
         long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
+        
+        g.setColor(Color.BLACK);
         g.drawString("Tiempo: " + elapsedTime + "s", 10, 20);
         g.drawString("Patos cazados: " + patosCazados, 10, 40);
+
+
+
+
+        if (elapsedTime >= LIMITE_TIEMPO) {
+            timer.stop(); 
+        
+            if (limitime != null) {
+                limitime.setFramePosition(0); 
+                limitime.start(); 
+            }
+            
+            JOptionPane.showMessageDialog(frame, "LIMITE DE TIEMPO SUPERADO!! ");
+
+            nivel=1;
+            patosObjetivo = nivel * cantPatos;
+            resetGame();
+        }
+        
     }
 
     @Override
@@ -90,9 +141,15 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
   
    private void showVictoryMessage() {
         long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
+
+        if (nivelpass != null) {
+            nivelpass.setFramePosition(0); 
+            nivelpass.start(); 
+        }
         JOptionPane.showMessageDialog(frame, "¡Victoria! Has superado el nivel " + nivel + " en " + elapsedTime + " segundos.");
         nivel++;
         patosObjetivo = nivel * cantPatos;
+
 
 
        if (nivel == 5) {
@@ -119,6 +176,9 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         startGame();
     }
 
+
+  
+
     @Override
     public void mousePressed(MouseEvent e) {}
     @Override
@@ -129,15 +189,4 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent e) {}
 
 
-
-    private int variable;
-
-    public Juego(int nivel) {
-        this.nivel = nivel;
-
-    }
-
-    public void imprimirVariable() {
-        System.out.println("Variable en ClaseA: " + variable);
-    }
 }
