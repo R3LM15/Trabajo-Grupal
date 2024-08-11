@@ -20,8 +20,9 @@ public class DuckHunt {
         frame = new JFrame("Duck Hunt");
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
+        
         int ancho = 500;
-        int alto = 500;
+        int alto = 400;
 
         if (ancho == 500 && alto == 400){
         } else {
