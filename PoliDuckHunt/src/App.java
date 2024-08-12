@@ -20,7 +20,7 @@ public class App {
         //    System.out.println(u.toString());
         //}
         //DuckHunt.main(args);
-        
+        System.out.println(System.currentTimeMillis());
         FlatLightLaf.setup();
         FlatLightLaf.supportsNativeWindowDecorations();
         try {

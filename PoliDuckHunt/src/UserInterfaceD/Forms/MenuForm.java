@@ -18,7 +18,6 @@ public class MenuForm extends JPanel {
     
     public JButton
         btnInicio = new JButton("JUGAR"),
-        btnOpciones= new JButton("OPCIONES"),
         btnPuntajes= new JButton("PUNTAJES"),
         btnCredito= new JButton("CREDITOS"),
         btnSalir= new JButton("SALIR");
@@ -46,7 +45,6 @@ public class MenuForm extends JPanel {
         }
         
         add(btnInicio);
-        add(btnOpciones);
         add(btnPuntajes);
         add(btnCredito);
         add(btnSalir);

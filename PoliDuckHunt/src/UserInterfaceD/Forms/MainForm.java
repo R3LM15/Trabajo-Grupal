@@ -18,14 +18,13 @@ public class MainForm extends JFrame{
     public MainForm (String tiltleApp){
         customizeComponent(tiltleApp);
         pnlMenuForm.btnInicio.addActionListener(e -> setPanel(new Juego()));
-        pnlMenuForm.btnOpciones.addActionListener(e -> System.exit(0));
         pnlMenuForm.btnCredito.addActionListener(e -> System.exit(0));
         pnlMenuForm.btnSalir.addActionListener(e -> ExitQ());
     }
 
     private void setPanel(JPanel formularioPanel) {
         Container container = getContentPane();
-        container.remove(pnlMain);
+        container.remove(pnlMenuForm);
         pnlMain = formularioPanel;
         container.add(pnlMain, BorderLayout.CENTER);
         revalidate();
@@ -35,7 +34,7 @@ public class MainForm extends JFrame{
     private void customizeComponent(String titleApp){
         setTitle(titleApp);
         setSize(800,600);
-        setResizable(false);                  
+        setResizable(true);                  
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         

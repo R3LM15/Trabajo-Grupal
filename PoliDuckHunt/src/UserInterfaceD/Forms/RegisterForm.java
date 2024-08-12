@@ -44,7 +44,7 @@ public class RegisterForm extends JFrame {
             setVisible(true);
         }
 
-        private void showMainForm(){
+        public void showMainForm(){
             MainForm pnlMainForm = new MainForm("DUCK AND HUNT 💀✨");
             pnlMainForm.setVisible(true);
             remove(pnlRegister);
