@@ -38,17 +38,20 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private JPanel mainPanel;
     private static final int LIMITE_TIEMPO = 30;
     
-     private Clip limitime;
-     private Clip nivelpass;
+    private Clip limitime;
+    private Clip nivelpass;
 
-
-
-    public Juego(JFrame frame, CardLayout cardLayout, JPanel mainPanel) {
-        this.frame = frame;
-        this.cardLayout = cardLayout;
-        this.mainPanel = mainPanel;
+    public Juego() {
+        this.frame = new JFrame("Duck Hunt");
+        //this.cardLayout = new CardLayout();
+        //this.mainPanel = new JPanel(cardLayout);
         this.patos = new ArrayList<>();
         this.patosCazados = 0;
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setSize(800, 600); // Tamaño inicial de la ventana
+        //frame.setResizable(true); // Permite cambiar el tamaño
+        //frame.add(this);
+        //frame.setVisible(true);
         for (int i = 0; i < 15; i++) {
             patos.add(new Pato());
         }

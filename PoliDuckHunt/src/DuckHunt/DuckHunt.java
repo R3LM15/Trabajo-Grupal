@@ -46,13 +46,13 @@ public class DuckHunt {
             }
         });
 
-        Menu menu = new Menu(cardLayout, mainPanel);
+        //Menu menu = new Menu(cardLayout, mainPanel);
         Juego juego = new Juego(frame, cardLayout, mainPanel);
         //Salir salir = new salir(frame, cardLayout, mainPanel);
 
 
         mainPanel.add(startPanel, "Start");
-        mainPanel.add(menu, "Menu");
+        //mainPanel.add(menu, "Menu");
         mainPanel.add(juego, "Juego");
         //mainPanel.add(salir, "Salir");
 
