@@ -3,6 +3,7 @@ package DuckHunt;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -34,13 +35,14 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private Image background;
     private JFrame frame;
     private long startTime;
+    //private long elapsedTime;
     private int patosCazados;
     public static int nivel = 1;
     private int cantPatos = 5;
     private int patosObjetivo = cantPatos;
     private CardLayout cardLayout;
     private JPanel mainPanel;
-    private static final int LIMITE_TIEMPO = 30;
+    private static final int LIMITE_TIEMPO = 10;
     
     private Clip limitime;
     private Clip nivelpass;
@@ -48,6 +50,8 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     //RegisterForm frmForm = new RegisterForm();
 
     public Juego() {
+        //this.startTime = System.currentTimeMillis();
+        //this.timer.start();
         this.frame = new JFrame("Duck Hunt");
         //this.cardLayout = new CardLayout();
         //this.mainPanel = new JPanel(cardLayout);
@@ -59,15 +63,15 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         this.timer = new Timer(1000 / 60, this);
         this.background = Toolkit.getDefaultToolkit().getImage("imagenes/fondo.png");
         addMouseListener(this);
-
-         try {
+        
+        try {
             AudioInputStream caidaAudioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/Voicy_Game-Over.wav"));
             limitime = AudioSystem.getClip();
             limitime.open(caidaAudioInputStream);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
-
+        
         try {
             AudioInputStream caidaAudioInputStream = AudioSystem.getAudioInputStream(new File("Sonido/Voicy_Game-Start-Sound.wav"));
             nivelpass = AudioSystem.getClip();
@@ -76,14 +80,14 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
             e.printStackTrace();
         }
     }
-
+    
     public void startGame() {
         this.startTime = System.currentTimeMillis();
         JOptionPane.showMessageDialog(frame, "Nivel "+ nivel + " [Objetivo " + (patosObjetivo) + " patos]");
         this.timer.start();
     }
     
-
+    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -91,17 +95,18 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         for (Pato duck : patos) {
             duck.draw(g);
         }
-        long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
+        Long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
         System.out.println(elapsedTime);
+        System.out.println(startTime);
         System.out.println(timer);
         g.setColor(Color.BLACK);
         g.drawString("Tiempo: " + elapsedTime + "s", 10, 20);
         g.drawString("Patos cazados: " + patosCazados, 10, 40);
-
-
-
-
-        if (elapsedTime >= LIMITE_TIEMPO) {
+        
+        if (elapsedTime >=30) {
+            resetGame();
+        }
+        if (elapsedTime >= LIMITE_TIEMPO && elapsedTime <= 30) {
             timer.stop(); 
             
             if (limitime != null) {
@@ -109,14 +114,12 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
                 limitime.start(); 
             }
             
-            JOptionPane.showMessageDialog(frame, "LIMITE DE TIEMPO SUPERADO!! ");
-
+            //JOptionPane.showMessageDialog(frame, "LIMITE DE TIEMPO SUPERADO!! ");
             nivel=1;
             patosObjetivo = nivel * cantPatos;
-            remove(frame);
-            RegisterForm frmRegisterForm = new RegisterForm();
+            //resetGame();
+            //RegisterForm frmRegisterForm = new RegisterForm();
         }
-        
     }
 
     @Override
@@ -166,7 +169,6 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         patosObjetivo = nivel * cantPatos;
        }
 
-
         resetGame();
     }
    
@@ -174,10 +176,11 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
     private void resetGame() {
         patosCazados = 0;
         patos.clear();
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 10; i++) {
             patos.add(new Pato());
         }
         repaint();
+        startGame();
     }
 
 

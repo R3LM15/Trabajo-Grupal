@@ -8,7 +8,6 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatAtomOneDarkIJT
 
 import BusinessLogic.UserLoginBL;
 import DataAccess.DTO.UserLoginDTO;
-import DuckHunt.DuckHunt;
 import UserInterfaceD.Forms.MainForm;
 import UserInterfaceD.Forms.RegisterForm;
 import UserInterfaceD.Forms.SplashForm;

@@ -114,25 +114,26 @@ public class UserLoginDAO extends SQLiteDataHelper implements IDAO<UserLoginDTO>
         UserLoginDTO u = new UserLoginDTO();
         String query = 
          " SELECT RowNum            "
-        +"     ,IdCatalogo          "
-        +"     ,IdCatalogoTipo      "
+        +"     ,IdUserLogin         "
+        +"     ,IdNivel             "
         +"     ,Nombre              "
-        +"     ,Descripcion         "
+        +"     ,Puntaje             "
+        +"     ,Tiempo              "
         +"     ,Estado              "
         +"     ,FechaCreacion       "
         +"     ,FechaModifica       "
         +" FROM (                   "
-        +"     SELECT ROW_NUMBER() OVER (ORDER BY IdCatalogo) AS RowNum "
-        +"         ,IdCatalogo      "
-        +"         ,IdCatalogoTipo  "   
+        +"     SELECT ROW_NUMBER() OVER (ORDER BY IdUserLogin) AS RowNum "
+        +"         ,IdUserLogin     "
+        +"         ,IdNivel         "   
         +"         ,Nombre          "
-        +"         ,Descripcion     "   
+        +"         ,Puntaje         "   
+        +"         ,Tiempo          "   
         +"         ,Estado          "
         +"         ,FechaCreacion   "       
         +"         ,FechaModifica   "   
-        +"     FROM Catalogo        "
+        +"     FROM UserLogin       "
         +"     WHERE Estado = 'A'   "
-        +"     AND IdCatalogoTipo = 2 "
         +" ) sub                    "
         +" WHERE RowNum = " + id.toString();  
         try {
@@ -143,8 +144,8 @@ public class UserLoginDAO extends SQLiteDataHelper implements IDAO<UserLoginDTO>
             while (rs.next()) {
                 u = new UserLoginDTO( 
                                 rs.getInt(1)     // RowNum
-                                ,rs.getInt(2)     // IdCatalogo
-                                ,rs.getInt(3)     // IdCatalogoTipo             
+                                ,rs.getInt(2)     // IdUserLogin
+                                ,rs.getInt(3)     // IdNivel             
                                 ,rs.getString(4)  // Nombre         
                                 ,rs.getString(5)  // Puntaje      
                                 ,rs.getString(6)  // Tiempo      

@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import DuckHunt.DuckHunt;
 import DuckHunt.Juego;
 
 public class MainForm extends JFrame{
@@ -18,29 +17,38 @@ public class MainForm extends JFrame{
     public MainForm (String tiltleApp){
         customizeComponent(tiltleApp);
         pnlMenuForm.btnInicio.addActionListener(e -> setPanel(new Juego()));
+        pnlMenuForm.btnPuntajes.addActionListener(e -> setPanel(new ScoreForm()));
         pnlMenuForm.btnCredito.addActionListener(e -> System.exit(0));
         pnlMenuForm.btnSalir.addActionListener(e -> ExitQ());
     }
 
     private void setPanel(JPanel formularioPanel) {
         Container container = getContentPane();
-        container.remove(pnlMenuForm);
+        container.remove(pnlMain);
         pnlMain = formularioPanel;
         container.add(pnlMain, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
-
+    
     private void customizeComponent(String titleApp){
         setTitle(titleApp);
-        setSize(800,600);
-        setResizable(true);                  
+        setSize(1100,625);
+        setResizable(false);                  
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         
-        this.add(pnlMenuForm, BorderLayout.CENTER);
+        // Crear un contenedor para los dos paneles usando BorderLayout
+        Container container = getContentPane();
+        container.setLayout(new BorderLayout());
 
+        // Agregar los paneles al contenedor
+        container.add(pnlMenuForm, BorderLayout.WEST);
+        container.add(pnlMain, BorderLayout.CENTER);
         setVisible(true);
+        //this.add(pnlMenuForm, BorderLayout.CENTER);
+
+        //setVisible(true);
     }
     private void ExitQ(){
             String [] arreglo = {"SI","NO"};

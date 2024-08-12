@@ -1,5 +1,7 @@
 package UserInterfaceD.Forms;
 
+import java.awt.Dimension;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,9 +30,7 @@ public class MenuForm extends JPanel {
 
     private void customizeComponent(){
         setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
-
-        add(jlbLabel7);
-        jlbLabel7.setFont(IAStyle.FONT_TITLE);
+        setPreferredSize(new Dimension(350, getHeight()));
 
         setBackground(IAStyle.COLOR_INTRO);
             jfrMenuFrame.setSize(20, 20);

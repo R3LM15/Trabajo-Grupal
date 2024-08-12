@@ -24,7 +24,7 @@ public class RegisterForm extends JFrame {
 
             setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
-            jfrRegister =new JFrame();
+            jfrRegister = new JFrame();
             
             pnlLogeo.btnConinuar.addActionListener(e -> showMainForm());
             pnlLogeo.btnSalir.addActionListener(e -> ExitQ());

@@ -5,10 +5,10 @@ DROP TABLE IF EXISTS Nivel;
 
 CREATE TABLE UserLogin (
      IdUserLogin    INTEGER     NOT NULL PRIMARY KEY AUTOINCREMENT
-    ,IdNivel        INTEGER     NOT NULL REFERENCES Nivel (IdNivel)
+    ,IdNivel        INTEGER     REFERENCES Nivel (IdNivel)
     ,Nombre         VARCHAR(20) NOT NULL 
-    ,Puntaje        VARCHAR(90) NOT NULL 
-    ,Tiempo         TIME        NOT NULL
+    ,Puntaje        VARCHAR(90)  
+    ,Tiempo         TIME        
 
     ,Estado         VARCHAR(1)  NOT NULL DEFAULT('A')
     ,FechaCreacion  DATETIME    DEFAULT(datetime('now','localtime'))
