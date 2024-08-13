@@ -76,15 +76,16 @@ public class UserLoginDAO extends SQLiteDataHelper implements IDAO<UserLoginDTO>
     public boolean update(UserLoginDTO entity) throws Exception {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
         LocalDateTime now = LocalDateTime.now();
-        String query = "UPDATE UserLogin SET Nombre = ?, Puntaje = ?, Tiempo = ?, FechaModifica = ? WHERE IdUserLogin = ?";
+        String query = "UPDATE UserLogin SET IdNivel = ?, Nombre = ?, Puntaje = ?, Tiempo = ?, FechaModifica = ? WHERE IdUserLogin = ?";
         try {
             Connection          conn = openConnection();
             PreparedStatement pstmt  = conn.prepareStatement(query);
-            pstmt.setString(1, entity.getNombre());
-            pstmt.setString(2, entity.getPuntaje());
-            pstmt.setString(3, entity.getTiempo());
-            pstmt.setString(4, dtf.format(now).toString());
-            pstmt.setInt(5, entity.getIdUserLogin());
+            pstmt.setInt(1, entity.getIdNivel());
+            pstmt.setString(2, entity.getNombre());
+            pstmt.setString(3, entity.getPuntaje());
+            pstmt.setString(4, entity.getTiempo());
+            pstmt.setString(5, dtf.format(now).toString());
+            pstmt.setInt(6, entity.getIdUserLogin());
             pstmt.executeUpdate();
             return true;
         } 
@@ -140,7 +141,7 @@ public class UserLoginDAO extends SQLiteDataHelper implements IDAO<UserLoginDTO>
             Connection conn = openConnection();         // conectar a DB     
             Statement  stmt = conn.createStatement();   // CRUD : select * ...    
             ResultSet  rs   = stmt.executeQuery(query);    // ejecutar la
-            System.out.println(query);
+            //System.out.println(query);
             while (rs.next()) {
                 u = new UserLoginDTO( 
                                 rs.getInt(1)     // RowNum

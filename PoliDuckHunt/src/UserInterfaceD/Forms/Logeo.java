@@ -1,7 +1,11 @@
 package UserInterfaceD.Forms;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.TextField;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -9,7 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import UserInterfaceD.IAStyle;
+import BusinessLogic.UserLoginBL;
+import DataAccess.DTO.UserLoginDTO;
+import UserInterfaceD.DuckStyle;
 
 
 public class Logeo extends JPanel{
@@ -31,44 +37,50 @@ public class Logeo extends JPanel{
         public Logeo(){
             customizeComponent();
         }
-
+        
         private void customizeComponent(){
-
+            
             ImageIcon img_perro;
-            img_perro = new ImageIcon(IAStyle.URL_PerroR);
+            img_perro = new ImageIcon(DuckStyle.URL_PerroR);
             jlbLabel4.setIcon(img_perro);
             
-
+            try {
+                
+                File fontStyle = new File("src/UserInterfaceD/Resource/tipografias/m29.TTF");
+                Font font1 = Font.createFont(Font.TRUETYPE_FONT, fontStyle).deriveFont(44f);
+                jlbLabel1.setFont(font1);
+                
+            } catch (FontFormatException | IOException e) {
+                e.printStackTrace();
+            }
+            
             jfrLogeo = new JFrame();
+            setBackground(DuckStyle.COLOR_LOGEO);
             setLayout(null);
-            setBackground(IAStyle.COLOR_LOGEO);
             jfrLogeo.setLocationRelativeTo(null);
-
-        try {
             
-            btnConinuar.setSize(25, 25);
-            
-            jlbLabel1.setFont(IAStyle.FONT_TITLE);
-            jlbLabel1.setForeground(Color.CYAN);
-            jlbLabel1.setBounds(335,-20,200,100);
-            
-            jlbLabel2.setForeground(Color.ORANGE);
-            jlbLabel2.setFont(IAStyle.FONT_BOLD);
-            jlbLabel2.setBounds(150, 80, 200, 100);
-
-            txtIngreso.setBounds(400, 120, 200, 20);
+            try {
+                
+                jlbLabel1.setForeground(DuckStyle.COLOR_BORDER);
+                jlbLabel1.setBounds(180,-10,800,100);
+                
+                jlbLabel2.setForeground(Color.ORANGE);
+                jlbLabel2.setFont(DuckStyle.FONT_BOLD);
+                jlbLabel2.setBounds(150, 80, 200, 100);
+                
+                txtIngreso.setBounds(400, 120, 200, 20);
             txtIngreso.setForeground(Color.WHITE);
-            txtIngreso.setBackground(Color.BLACK);
-
+            txtIngreso.setBackground(DuckStyle.COLOR_INTRO);
+            
             btnConinuar.setBounds(335, 190, 160, 40);
-            btnConinuar.setForeground(Color.BLACK);
+            btnConinuar.setForeground(DuckStyle.COLOR_INTRO);
             btnConinuar.setBackground(Color.YELLOW);
-            btnConinuar.setFont(IAStyle.FONT_HIGHT);
+            btnConinuar.setFont(DuckStyle.FONT_HIGHT);
 
             btnSalir.setBounds(650, 200, 80, 40);
             btnSalir.setForeground(Color.WHITE);
             btnSalir.setBackground(Color.RED);
-            btnSalir.setFont(IAStyle.FONT_HIGHT);
+            btnSalir.setFont(DuckStyle.FONT_HIGHT);
 
             jlbLabel4.setBounds(150, 190, 150, 100);
 

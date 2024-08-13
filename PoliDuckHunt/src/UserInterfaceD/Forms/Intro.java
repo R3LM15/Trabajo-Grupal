@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import UserInterfaceD.IAStyle;
+import UserInterfaceD.DuckStyle;
 
 
 public class Intro extends JPanel {
@@ -26,22 +26,22 @@ public class Intro extends JPanel {
         private void customizeComponent(){
 
             
-            setBackground(IAStyle.COLOR_INTRO);
+            setBackground(DuckStyle.COLOR_INTRO);
             jfrIntro.setSize(20, 20);
 
             ImageIcon img_patoi;
-            img_patoi = new ImageIcon(IAStyle.URL_Patodi);
+            img_patoi = new ImageIcon(DuckStyle.URL_Patodi);
             jlbLabel5.setIcon(img_patoi);
 
             ImageIcon img_patod;
-            img_patod = new ImageIcon(IAStyle.URL_Patod);
+            img_patod = new ImageIcon(DuckStyle.URL_Patod);
             jlbLabel6.setIcon(img_patod);
             
             jfrIntro.setLayout(null);    
                         add(jlbLabel5);
                         
                         try {
-                            Image logo = ImageIO.read(IAStyle.URL_Login);
+                            Image logo = ImageIO.read(DuckStyle.URL_Login);
                             logo = logo.getScaledInstance(550, 300, Image.SCALE_SMOOTH);
                             add(new JLabel(new ImageIcon(logo)));
                         } catch (IOException e) {

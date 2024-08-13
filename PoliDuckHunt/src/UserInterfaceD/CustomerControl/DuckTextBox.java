@@ -6,26 +6,26 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
-import UserInterfaceD.IAStyle;
+import UserInterfaceD.DuckStyle;
 
-public class PatTextBox extends JTextField {
+public class DuckTextBox extends JTextField {
 
-    public PatTextBox() {
+    public DuckTextBox() {
         customizeComponent();
     }
 
     private void customizeComponent() {
         setBorderRect();
-        setFont(IAStyle.FONT);  
-        setForeground(IAStyle.COLOR_FONT_LIGHT);  
-        setCaretColor(IAStyle.COLOR_CURSOR);    // Color del cursor
+        setFont(DuckStyle.FONT);  
+        setForeground(DuckStyle.COLOR_FONT_LIGHT);  
+        setCaretColor(DuckStyle.COLOR_CURSOR);    // Color del cursor
         setMargin(new Insets(5, 5, 5, 5));      // Ajusta los márgenes
         setOpaque(false);                       // Fondo transparente
         //setUI(new BasicTextFieldUI());  // Para deshabilitar el subrayado por defecto
     }
 
     public void setBorderRect() {
-        Border lineBorder = BorderFactory.createLineBorder(IAStyle.COLOR_BORDER);
+        Border lineBorder = BorderFactory.createLineBorder(DuckStyle.COLOR_BORDER);
         Border emptyBorder = new EmptyBorder(5, 5, 5, 5);  // Márgenes internos
         setBorder( new CompoundBorder(lineBorder, emptyBorder));
     }
@@ -34,7 +34,7 @@ public class PatTextBox extends JTextField {
         int thickness = 1;
         setBorder(  BorderFactory.createCompoundBorder(
                     BorderFactory.createEmptyBorder(0, 0, thickness, 0),
-                    BorderFactory.createMatteBorder(0, 0, thickness, 0, IAStyle.COLOR_BORDER) 
+                    BorderFactory.createMatteBorder(0, 0, thickness, 0, DuckStyle.COLOR_BORDER) 
         ));
     }
 }

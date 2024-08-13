@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 
 public class RegisterForm extends JFrame {
 
+    String nombre;
+
     JFrame jfrRegister = new JFrame();
     Intro pnlIntro = new Intro();
     Logeo pnlLogeo = new Logeo();
@@ -40,12 +42,13 @@ public class RegisterForm extends JFrame {
             
             container.add(pnlIntro, BorderLayout.NORTH);
             getContentPane().add(pnlLogeo);
-
+        
             setVisible(true);
         }
 
-        public void showMainForm(){
-            MainForm pnlMainForm = new MainForm("DUCK AND HUNT 💀✨");
+        private void showMainForm(){
+            this.nombre = String.valueOf(pnlLogeo.txtIngreso.getText());
+            MainForm pnlMainForm = new MainForm("DUCK AND HUNT 💀✨", nombre);
             pnlMainForm.setVisible(true);
             remove(pnlRegister);
             this.dispose();

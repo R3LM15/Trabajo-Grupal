@@ -25,36 +25,41 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import BusinessLogic.UserLoginBL;
+import DataAccess.DTO.UserLoginDTO;
+import UserInterfaceD.DuckStyle;
 import UserInterfaceD.Forms.MainForm;
 import UserInterfaceD.Forms.MenuForm;
 import UserInterfaceD.Forms.RegisterForm;
 
 public class Juego extends JPanel implements ActionListener, MouseListener {
+
+    private UserLoginBL  scoreBL  = new UserLoginBL();
+    private UserLoginDTO scoreDAO = null;
+
+    private String nombre;
     private List<Pato> patos;
     private Timer timer;
     private Image background;
     private JFrame frame;
     private long startTime;
-    //private long elapsedTime;
     private int patosCazados;
     public static int nivel = 1;
     private int cantPatos = 5;
     private int patosObjetivo = cantPatos;
     private CardLayout cardLayout;
     private JPanel mainPanel;
-    private static final int LIMITE_TIEMPO = 10;
+    private static final int LIMITE_TIEMPO = 30;
     
     private Clip limitime;
     private Clip nivelpass;
 
     //RegisterForm frmForm = new RegisterForm();
 
-    public Juego() {
-        //this.startTime = System.currentTimeMillis();
-        //this.timer.start();
+    public Juego(String nombre) {
+        this.nombre = nombre;
         this.frame = new JFrame("Duck Hunt");
-        //this.cardLayout = new CardLayout();
-        //this.mainPanel = new JPanel(cardLayout);
+
         this.patos = new ArrayList<>();
         this.patosCazados = 0;
         for (int i = 0; i < 15; i++) {
@@ -96,17 +101,14 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
             duck.draw(g);
         }
         Long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
-        System.out.println(elapsedTime);
-        System.out.println(startTime);
-        System.out.println(timer);
-        g.setColor(Color.BLACK);
+        g.setColor(DuckStyle.COLOR_INTRO);
         g.drawString("Tiempo: " + elapsedTime + "s", 10, 20);
         g.drawString("Patos cazados: " + patosCazados, 10, 40);
         
-        if (elapsedTime >=30) {
+        if (elapsedTime >=32) {
             resetGame();
         }
-        if (elapsedTime >= LIMITE_TIEMPO && elapsedTime <= 30) {
+        if (elapsedTime >= LIMITE_TIEMPO && elapsedTime <= 32) {
             timer.stop(); 
             
             if (limitime != null) {
@@ -114,11 +116,20 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
                 limitime.start(); 
             }
             
-            //JOptionPane.showMessageDialog(frame, "LIMITE DE TIEMPO SUPERADO!! ");
+            //JOptionPane.showMessageDialog(null, "LIMITE DE TIEMPO SUPERADO!! ");
+            scoreDAO = new UserLoginDTO();
+            scoreDAO.setIdNivel(nivel);
+            scoreDAO.setNombre(nombre);
+            scoreDAO.setPuntaje(String.valueOf(patosCazados));
+            scoreDAO.setTiempo(String.valueOf(elapsedTime));
+            try {
+                scoreBL.add(scoreDAO);
+            } catch (Exception e) {
+                DuckStyle.showMsgError(e.getMessage());
+            }
             nivel=1;
             patosObjetivo = nivel * cantPatos;
             //resetGame();
-            //RegisterForm frmRegisterForm = new RegisterForm();
         }
     }
 
@@ -146,8 +157,8 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
         }
     }
 
-  
-   private void showVictoryMessage() {
+
+    private void showVictoryMessage() {
         long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
 
         if (nivelpass != null) {
@@ -160,31 +171,28 @@ public class Juego extends JPanel implements ActionListener, MouseListener {
 
 
 
-       if (nivel == 5) {
-        JOptionPane.showMessageDialog(frame, "NIVEL FINAL! ");
-       }
-       if (nivel == 6) {
-        JOptionPane.showMessageDialog(frame, "Felicitaciones! ");
-        nivel=1;
-        patosObjetivo = nivel * cantPatos;
-       }
+        if (nivel == 5) {
+            JOptionPane.showMessageDialog(frame, "NIVEL FINAL! ");
+        }
+        if (nivel == 6) {
+            JOptionPane.showMessageDialog(frame, "Felicitaciones! ");
+            nivel=1;
+            patosObjetivo = nivel * cantPatos;
+        }
 
         resetGame();
     }
-   
+
 
     private void resetGame() {
         patosCazados = 0;
         patos.clear();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             patos.add(new Pato());
         }
         repaint();
         startGame();
     }
-
-
-  
 
     @Override
     public void mousePressed(MouseEvent e) {}

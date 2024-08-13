@@ -9,15 +9,15 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
-import UserInterfaceD.IAStyle;
+import UserInterfaceD.DuckStyle;
 
 import javax.swing.ImageIcon;
 
-public class PatButton  extends JButton implements MouseListener {
-    public PatButton(String text){
+public class DuckButton  extends JButton implements MouseListener {
+    public DuckButton(String text){
         customizeComponent(text);
     }
-    public PatButton(String text, String iconPath){
+    public DuckButton(String text, String iconPath){
         customizeComponent(text, iconPath);
     }
 
@@ -29,7 +29,7 @@ public class PatButton  extends JButton implements MouseListener {
         setBounds(50, 30, 90, 20); 
         
         setIcon(new ImageIcon(iconPath));
-        setFont(IAStyle.FONT);
+        setFont(DuckStyle.FONT);
     }
     public void customizeComponent(String text) {
         setText(text);
@@ -37,9 +37,9 @@ public class PatButton  extends JButton implements MouseListener {
         setFocusPainted(false);
         setBorderPainted(false);
         setContentAreaFilled(false);
-        setForeground(IAStyle.COLOR_FONT);
-        setHorizontalAlignment(IAStyle.ALIGNMENT_LEFT);
-        setFont(IAStyle.FONT);
+        setForeground(DuckStyle.COLOR_FONT);
+        setHorizontalAlignment(DuckStyle.ALIGNMENT_LEFT);
+        setFont(DuckStyle.FONT);
         
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
@@ -59,12 +59,12 @@ public class PatButton  extends JButton implements MouseListener {
     @Override
     public void mouseEntered(MouseEvent e) {
         setForeground(Color.BLACK);
-        setCursor(IAStyle.CURSOR_HAND);
+        setCursor(DuckStyle.CURSOR_HAND);
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         setForeground(Color.GRAY);
-        setCursor(IAStyle.CURSOR_DEFAULT);
+        setCursor(DuckStyle.CURSOR_DEFAULT);
     }
 }

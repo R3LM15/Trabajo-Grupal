@@ -10,4 +10,4 @@ INSERT INTO Nivel
 
 INSERT INTO UserLogin
  ( IdNivel  ,Nombre         ,Puntaje    ,Tiempo )  VALUES
- ( '3'      ,'asdas dfs'    ,'1241'     ,'00:05:13');
+ ( '1'      ,'TEST'    ,'0'     ,'0');

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 
-import UserInterfaceD.IAStyle;
+import UserInterfaceD.DuckStyle;
 
 
 public class SplashForm {
@@ -17,7 +17,7 @@ private static ImageIcon    icoImage;
 private static JLabel       porcetajeSplash;    
 
     public static void show(){
-        icoImage             = new ImageIcon(IAStyle.URL_Splash);
+        icoImage             = new ImageIcon(DuckStyle.URL_Splash);
         porcetajeSplash      = new JLabel(icoImage);
         barraSplash          = new JProgressBar(0, 100);
 

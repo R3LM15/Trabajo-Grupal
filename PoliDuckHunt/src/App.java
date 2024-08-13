@@ -14,12 +14,6 @@ import UserInterfaceD.Forms.SplashForm;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        //UserLoginBL uBl = new UserLoginBL();
-        //for (UserLoginDTO u : uBl.getAll()) {
-        //    System.out.println(u.toString());
-        //}
-        //DuckHunt.main(args);
-        System.out.println(System.currentTimeMillis());
         FlatLightLaf.setup();
         FlatLightLaf.supportsNativeWindowDecorations();
         try {

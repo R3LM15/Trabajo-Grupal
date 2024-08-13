@@ -4,10 +4,10 @@ import javax.swing.*;
 
 import BusinessLogic.UserLoginBL;
 import DataAccess.DTO.UserLoginDTO;
-import UserInterfaceD.IAStyle;
-import UserInterfaceD.CustomerControl.PatButton;
-import UserInterfaceD.CustomerControl.PatLabel;
-import UserInterfaceD.CustomerControl.PatTextBox;
+import UserInterfaceD.DuckStyle;
+import UserInterfaceD.CustomerControl.DuckButton;
+import UserInterfaceD.CustomerControl.DuckLabel;
+import UserInterfaceD.CustomerControl.DuckTextBox;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -37,7 +37,7 @@ public class ScoreForm extends JPanel implements ActionListener{
             btnEliminar.addActionListener(  e -> btnEliminarClick());
             btnCancelar.addActionListener(  e -> btnCancelarClick());
         } catch (Exception e) {
-            IAStyle.showMsg(e.getMessage());
+            DuckStyle.showMsg(e.getMessage());
         }
     }
 
@@ -47,7 +47,7 @@ public class ScoreForm extends JPanel implements ActionListener{
             scoreDAO        = scoreBL.getBy(rowNum);
             idRowMaxScore   = scoreBL.getRowCount();
         } catch (Exception e) {
-            IAStyle.showMsg(e.getMessage());
+            DuckStyle.showMsg(e.getMessage());
         }
     }
 
@@ -67,7 +67,7 @@ public class ScoreForm extends JPanel implements ActionListener{
         boolean scoreNull = (scoreDAO == null);
         // String buttonText = ((JButton) e.getSource()).getText();
         try {
-            if (IAStyle.showConfirmYesNo("¿Seguro que desea " + ((scoreNull) ? "AGREGAR ?" : "ACTUALIZAR ?"))){
+            if (DuckStyle.showConfirmYesNo("¿Seguro que desea " + ((scoreNull) ? "AGREGAR ?" : "ACTUALIZAR ?"))){
             
                 if (scoreNull)
                     scoreDAO = new UserLoginDTO(txtNombre.getText().trim());
@@ -75,20 +75,20 @@ public class ScoreForm extends JPanel implements ActionListener{
                     scoreDAO.setNombre(txtNombre.getText());
     
                 if(!((scoreNull) ? scoreBL.add(scoreDAO) : scoreBL.update(scoreDAO)))
-                    IAStyle.showMsgError("Error al guardar...!");
+                    DuckStyle.showMsgError("Error al guardar...!");
     
                 loadRow();
                 showRow();
                 showTable();
             }
         } catch (Exception e) {
-            IAStyle.showMsgError(e.getMessage());
+            DuckStyle.showMsgError(e.getMessage());
         }
     }
 
     private void btnEliminarClick() {
         try {
-            if (IAStyle.showConfirmYesNo("Seguro que desea Eliminar?")) {
+            if (DuckStyle.showConfirmYesNo("Seguro que desea Eliminar?")) {
 
                 if (!scoreBL.delete(scoreDAO.getIdUserLogin()))
                     throw new Exception("Error al eliminar...!");
@@ -98,7 +98,7 @@ public class ScoreForm extends JPanel implements ActionListener{
                 showTable();
             }
         } catch (Exception e) {
-            IAStyle.showMsgError(e.getMessage());
+            DuckStyle.showMsgError(e.getMessage());
         }
     }
 
@@ -127,12 +127,12 @@ public class ScoreForm extends JPanel implements ActionListener{
     }
 
     private void showTable() throws Exception {
-        String[] header = {"rowNum","IdUser", "Nombre", "Puntaje", "Tiempo", "Estado"};
+        String[] header = {"rowNum","Nivel", "Nombre", "Puntaje", "Tiempo", "Estado"};
         Object[][] data = new Object[scoreBL.getAll().size()][6];
         int index = 0;
         for (UserLoginDTO u : scoreBL.getAll()) {
             data[index][0] = u.getRowNum();
-            data[index][1] = u.getIdUserLogin();
+            data[index][1] = u.getIdNivel();
             data[index][2] = u.getNombre();
             data[index][3] = u.getPuntaje();
             data[index][4] = u.getTiempo();
@@ -171,32 +171,29 @@ public class ScoreForm extends JPanel implements ActionListener{
         });
     }
 
-/************************
- * FormDesing : pat_mic
- ************************/ 
-    private PatLabel 
-            lblTitulo   = new PatLabel("Score"),
-            lblrowNum   = new PatLabel("Codigo:      "),
-            lblNombre   = new PatLabel("*Descripción: "),
-            lblTotalReg = new PatLabel(" 0 de 0 ");
-    private PatTextBox 
-            txtrowNum   = new PatTextBox(),
-            txtNombre   = new PatTextBox();
-    private PatButton 
-            btnPageIni  = new PatButton(" |< "),
-            btnPageAnt  = new PatButton(" << "),
-            btnPageSig  = new PatButton(" >> "),
-            btnPageFin  = new PatButton(" >| "),
+    private DuckLabel 
+            lblTitulo   = new DuckLabel("Score"),
+            lblrowNum   = new DuckLabel("ID USER:      "),
+            lblNombre   = new DuckLabel("*NOMBRE: "),
+            lblTotalReg = new DuckLabel(" 0 de 0 ");
+    private DuckTextBox 
+            txtrowNum   = new DuckTextBox(),
+            txtNombre   = new DuckTextBox();
+    private DuckButton 
+            btnPageIni  = new DuckButton(" |< "),
+            btnPageAnt  = new DuckButton(" << "),
+            btnPageSig  = new DuckButton(" >> "),
+            btnPageFin  = new DuckButton(" >| "),
 
-            btnRowIni   = new PatButton(" |< "),
-            btnRowAnt   = new PatButton(" << "),
-            btnRowSig   = new PatButton(" >> "),
-            btnRowFin   = new PatButton(" >| "),
+            btnRowIni   = new DuckButton(" |< "),
+            btnRowAnt   = new DuckButton(" << "),
+            btnRowSig   = new DuckButton(" >> "),
+            btnRowFin   = new DuckButton(" >| "),
 
-            btnNuevo    = new PatButton("Nuevo"),
-            btnGuardar  = new PatButton("Guardar"),
-            btnCancelar = new PatButton("Cancelar"),
-            btnEliminar = new PatButton("Eliminar");
+            btnNuevo    = new DuckButton("Nuevo"),
+            btnGuardar  = new DuckButton("Guardar"),
+            btnCancelar = new DuckButton("Cancelar"),
+            btnEliminar = new DuckButton("Eliminar");
     private JPanel 
             pnlTabla    = new JPanel(),
             pnlBtnRow   = new JPanel(new FlowLayout()),
@@ -213,9 +210,9 @@ public class ScoreForm extends JPanel implements ActionListener{
 
         pnlBtnPage.add(btnPageIni);
         pnlBtnPage.add(btnPageAnt);
-        pnlBtnPage.add(new PatLabel(" Page:( "));
+        pnlBtnPage.add(new DuckLabel(" Page:( "));
         pnlBtnPage.add(lblTotalReg); //cambiar
-        pnlBtnPage.add(new PatLabel(" ) "));
+        pnlBtnPage.add(new DuckLabel(" ) "));
         pnlBtnPage.add(btnPageSig);
         pnlBtnPage.add(btnPageFin);
 
@@ -225,11 +222,11 @@ public class ScoreForm extends JPanel implements ActionListener{
         pnlBtnRow.add(btnRowSig);
         pnlBtnRow.add(btnRowFin);
 
-        pnlBtnCRUD.add(btnNuevo);
-        pnlBtnCRUD.add(btnGuardar);
+        //pnlBtnCRUD.add(btnNuevo);
+        //pnlBtnCRUD.add(btnGuardar);
         pnlBtnCRUD.add(btnCancelar);
         pnlBtnCRUD.add(btnEliminar);
-        pnlBtnCRUD.setBorder(IAStyle.createBorderRect());
+        pnlBtnCRUD.setBorder(DuckStyle.createBorderRect());
 
         gbc.insets = new Insets(5, 5, 5, 5);
 
@@ -291,12 +288,6 @@ public class ScoreForm extends JPanel implements ActionListener{
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridwidth = GridBagConstraints.REMAINDER; // Indica que este componente ocupa toda la fila
         add(txtNombre, gbc);
-
-        // gbc.gridy = 7;
-        // gbc.gridx = 1;
-        // gbc.gridwidth = 2;
-        // gbc.fill = GridBagConstraints.HORIZONTAL;
-        // add(pnlBtnRow, gbc);
 
         gbc.gridy = 7;
         gbc.gridx = 0;
