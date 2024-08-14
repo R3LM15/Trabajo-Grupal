@@ -11,14 +11,16 @@ import DuckHunt.Juego;
 
 public class MainForm extends JFrame{
 
-    String nombre;
+    public String nombre;
 
-    MenuForm pnlMenuForm = new MenuForm();
-    JPanel pnlMain = new JPanel();
+    public MenuForm pnlMenuForm = new MenuForm();
+    public JPanel pnlMain = new JPanel();
     //Juego pnlJuego = new Juego();
 
     public MainForm (String tiltleApp, String nombre){
+        
         this.nombre = nombre;
+
         customizeComponent(tiltleApp);
         pnlMenuForm.btnInicio.addActionListener(e -> setPanel(new Juego(nombre)));
         pnlMenuForm.btnPuntajes.addActionListener(e -> setPanel(new ScoreForm()));

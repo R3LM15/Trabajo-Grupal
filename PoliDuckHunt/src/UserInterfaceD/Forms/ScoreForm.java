@@ -2,7 +2,7 @@ package UserInterfaceD.Forms;
 
 import javax.swing.*;
 
-import BusinessLogic.UserLoginBL;
+import BusinessLogic.Entities.UserLoginBL;
 import DataAccess.DTO.UserLoginDTO;
 import UserInterfaceD.DuckStyle;
 import UserInterfaceD.CustomerControl.DuckButton;
@@ -32,8 +32,6 @@ public class ScoreForm extends JPanel implements ActionListener{
             btnRowSig.addActionListener(this);
             btnRowFin.addActionListener(this);
             
-            btnNuevo.addActionListener(     e -> btnNuevoClick());
-            btnGuardar.addActionListener(   e -> btnGuardarClick());
             btnEliminar.addActionListener(  e -> btnEliminarClick());
             btnCancelar.addActionListener(  e -> btnCancelarClick());
         } catch (Exception e) {
@@ -58,33 +56,6 @@ public class ScoreForm extends JPanel implements ActionListener{
         lblTotalReg.setText(rowNum.toString() + " de " + idRowMaxScore.toString());
     }
 
-    private void btnNuevoClick() {
-        scoreDAO = null;
-        showRow();
-    } 
-    
-    private void btnGuardarClick() {
-        boolean scoreNull = (scoreDAO == null);
-        // String buttonText = ((JButton) e.getSource()).getText();
-        try {
-            if (DuckStyle.showConfirmYesNo("¿Seguro que desea " + ((scoreNull) ? "AGREGAR ?" : "ACTUALIZAR ?"))){
-            
-                if (scoreNull)
-                    scoreDAO = new UserLoginDTO(txtNombre.getText().trim());
-                else
-                    scoreDAO.setNombre(txtNombre.getText());
-    
-                if(!((scoreNull) ? scoreBL.add(scoreDAO) : scoreBL.update(scoreDAO)))
-                    DuckStyle.showMsgError("Error al guardar...!");
-    
-                loadRow();
-                showRow();
-                showTable();
-            }
-        } catch (Exception e) {
-            DuckStyle.showMsgError(e.getMessage());
-        }
-    }
 
     private void btnEliminarClick() {
         try {
@@ -190,8 +161,6 @@ public class ScoreForm extends JPanel implements ActionListener{
             btnRowSig   = new DuckButton(" >> "),
             btnRowFin   = new DuckButton(" >| "),
 
-            btnNuevo    = new DuckButton("Nuevo"),
-            btnGuardar  = new DuckButton("Guardar"),
             btnCancelar = new DuckButton("Cancelar"),
             btnEliminar = new DuckButton("Eliminar");
     private JPanel 
@@ -222,8 +191,6 @@ public class ScoreForm extends JPanel implements ActionListener{
         pnlBtnRow.add(btnRowSig);
         pnlBtnRow.add(btnRowFin);
 
-        //pnlBtnCRUD.add(btnNuevo);
-        //pnlBtnCRUD.add(btnGuardar);
         pnlBtnCRUD.add(btnCancelar);
         pnlBtnCRUD.add(btnEliminar);
         pnlBtnCRUD.setBorder(DuckStyle.createBorderRect());

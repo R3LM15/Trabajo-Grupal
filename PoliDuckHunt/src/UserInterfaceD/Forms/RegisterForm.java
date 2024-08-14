@@ -10,13 +10,13 @@ import javax.swing.JPanel;
 
 public class RegisterForm extends JFrame {
 
-    String nombre;
+    public String nombre;
 
-    JFrame jfrRegister = new JFrame();
-    Intro pnlIntro = new Intro();
-    Logeo pnlLogeo = new Logeo();
-    JPanel pnlRegister = new JPanel();
-    MenuForm pnlMenuForm = new MenuForm();
+    public JFrame jfrRegister = new JFrame();
+    public Intro pnlIntro = new Intro();
+    public Logeo pnlLogeo = new Logeo();
+    public JPanel pnlRegister = new JPanel();
+    public MenuForm pnlMenuForm = new MenuForm();
     
 
     public RegisterForm(){

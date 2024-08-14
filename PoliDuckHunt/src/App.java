@@ -6,7 +6,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatAtomOneDarkIJTheme;
 
-import BusinessLogic.UserLoginBL;
+import BusinessLogic.Entities.UserLoginBL;
 import DataAccess.DTO.UserLoginDTO;
 import UserInterfaceD.Forms.MainForm;
 import UserInterfaceD.Forms.RegisterForm;

@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import BusinessLogic.UserLoginBL;
+import BusinessLogic.Entities.UserLoginBL;
 import DataAccess.DTO.UserLoginDTO;
 import UserInterfaceD.DuckStyle;
 import UserInterfaceD.Forms.MainForm;

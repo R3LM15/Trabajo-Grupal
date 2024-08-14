@@ -13,14 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import BusinessLogic.UserLoginBL;
-import DataAccess.DTO.UserLoginDTO;
 import UserInterfaceD.DuckStyle;
 
 
 public class Logeo extends JPanel{
 
     public static JFrame jfrLogeo;
+    
 
     public JButton
         btnConinuar = new JButton("CONTINUAR"),
@@ -32,9 +31,10 @@ public class Logeo extends JPanel{
         jlbLabel4 = new JLabel();
 
         public TextField
-        txtIngreso = new TextField("");
         
-        public Logeo(){
+        txtIngreso = new TextField(null);
+
+        public Logeo() {
             customizeComponent();
         }
         
@@ -64,7 +64,7 @@ public class Logeo extends JPanel{
                 jlbLabel1.setForeground(DuckStyle.COLOR_BORDER);
                 jlbLabel1.setBounds(180,-10,800,100);
                 
-                jlbLabel2.setForeground(Color.ORANGE);
+                jlbLabel2.setForeground(Color.BLACK);
                 jlbLabel2.setFont(DuckStyle.FONT_BOLD);
                 jlbLabel2.setBounds(150, 80, 200, 100);
                 
@@ -74,12 +74,12 @@ public class Logeo extends JPanel{
             
             btnConinuar.setBounds(335, 190, 160, 40);
             btnConinuar.setForeground(DuckStyle.COLOR_INTRO);
-            btnConinuar.setBackground(Color.YELLOW);
+            btnConinuar.setBackground(Color.WHITE);
             btnConinuar.setFont(DuckStyle.FONT_HIGHT);
 
             btnSalir.setBounds(650, 200, 80, 40);
             btnSalir.setForeground(Color.WHITE);
-            btnSalir.setBackground(Color.RED);
+            btnSalir.setBackground(Color.BLACK);
             btnSalir.setFont(DuckStyle.FONT_HIGHT);
 
             jlbLabel4.setBounds(150, 190, 150, 100);
